@@ -13,6 +13,13 @@ module.exports  = {
     clean: true, // clean the dist folder before each build
   },
   plugins: [
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, 'public', 'index.html'),
+    }),
+    new webpack.ProgressPlugin({
+      handler: (percentage, message, ...args) => {
+        console.log(`${(percentage * 100).toFixed(2)}%`, message, ...args);
+      }
+    })
   ]
 }
