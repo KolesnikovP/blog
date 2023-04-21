@@ -1,3 +1,3 @@
 import {foo} from './index'
 
-foo()
+foo(5)

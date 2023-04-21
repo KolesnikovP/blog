@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "noImplicitAny": true, // error on expressions and declarations with an implied 'any' type.
+    "module": "es6", // specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'.
+    "target": "es5", // specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018' or 'ESNEXT'.
+    "jsx": "react",
+    "allowJs": true, // allow javascript files to be compiled.
+    "moduleResolution": "node" // specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6).
+  }
+}
