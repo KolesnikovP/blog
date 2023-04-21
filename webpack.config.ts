@@ -1,8 +1,8 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import webpack from 'webpack';
 
-module.exports  = {
+const config: webpack.Configuration = {
   mode: 'production',
   // entry point
   entry: path.resolve(__dirname, 'src', 'index.ts'),
@@ -29,9 +29,11 @@ module.exports  = {
       template: path.resolve(__dirname, 'public', 'index.html'),
     }),
     new webpack.ProgressPlugin({
-      handler: (percentage, message, ...args) => {
+      handler: (percentage: number, message: string, ...args: any) => {
         console.log(`${(percentage * 100).toFixed(2)}%`, message, ...args);
       }
     })
   ]
 }
+
+export default config;
