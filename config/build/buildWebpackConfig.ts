@@ -21,6 +21,6 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
             rules: buildLoaders()
         },
         resolve: buildResolvers(),
-        plugins: buildPlugins()
+        plugins: buildPlugins(options),
     }
 }

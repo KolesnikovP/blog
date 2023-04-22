@@ -9,9 +9,14 @@ const paths: BuildPaths = {
   html: path.resolve(__dirname, 'public', 'index.html'),
 }
 
+const mode: 'development' = 'development'
+
+const isDev: boolean = mode === 'development'
+
 const config: webpack.Configuration = buildWebpackConfig({
-  mode: 'development',
+  mode: mode,
   paths: paths,
+  isDev: isDev
 })
 
 export default config;
