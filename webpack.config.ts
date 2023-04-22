@@ -1,39 +1,17 @@
 import path from 'path';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
+import {buildWebpackConfig} from "./config/build/buildWebpackConfig";
+import {BuildPaths} from "./config/build/types/config";
 
-const config: webpack.Configuration = {
-  mode: 'production',
-  // entry point
+const paths: BuildPaths = {
   entry: path.resolve(__dirname, 'src', 'index.ts'),
-  // output point (where to put the bundle)
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name].[contenthash].js', // [name] is the entry point name [contenthash] is a hash of the content
-    clean: true, // clean the dist folder before each build
-  },
-  module: {
-    rules: [
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-      },
-    ],
-  },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public', 'index.html'),
-    }),
-    new webpack.ProgressPlugin({
-      handler: (percentage: number, message: string, ...args: any) => {
-        console.log(`${(percentage * 100).toFixed(2)}%`, message, ...args);
-      }
-    })
-  ]
+  output: path.resolve(__dirname, 'build'),
+  html: path.resolve(__dirname, 'public', 'index.html'),
 }
+
+const config: webpack.Configuration = buildWebpackConfig({
+  mode: 'development',
+  paths: paths,
+})
 
 export default config;

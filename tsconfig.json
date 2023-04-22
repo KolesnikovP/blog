@@ -5,6 +5,8 @@
     "module": "es6", // specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'.
     "target": "es5", // specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018' or 'ESNEXT'.
     "jsx": "react",
+    // для абсолютных путей
+    "baseUrl": ".", // base directory to resolve non-absolute module names.
     "allowJs": true, // allow javascript files to be compiled.
     "moduleResolution": "node", // specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6).
     "esModuleInterop": true, // Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports.
