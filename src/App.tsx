@@ -4,7 +4,7 @@ import {AboutPageAsync} from "./Pages/AboutPage/AboutPage.async";
 import {Suspense} from "react";
 import './styles/index.scss'
 import {useTheme} from "./theme/useTheme";
-import {classNames} from "./styles/helpers/classNames/classNames";
+import {classNames} from "./helpers/classNames/classNames";
 
 export const App = () => {
     const {theme, toggleTheme} = useTheme()
