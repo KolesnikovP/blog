@@ -3,7 +3,7 @@
 
 /***/ "./src/Pages/MainPage/MainPage.tsx":
 /*!*****************************************!*\
-  !*** ./src/Pages/MainPage/MainPage.tsx ***!
+  !*** ./src/pages/MainPage/MainPage.tsx ***!
   \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
