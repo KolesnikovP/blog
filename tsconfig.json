@@ -4,7 +4,7 @@
     "noImplicitAny": true, // error on expressions and declarations with an implied 'any' type.
     "module": "es6", // specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'.
     "target": "es5", // specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018' or 'ESNEXT'.
-    "jsx": "react",
+    "jsx": "react-jsx",
     // для абсолютных путей
     "baseUrl": ".", // base directory to resolve non-absolute module names.
     "allowJs": true, // allow javascript files to be compiled.
