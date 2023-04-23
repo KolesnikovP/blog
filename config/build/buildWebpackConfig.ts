@@ -19,7 +19,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
             clean: true, // clean the dist folder before each build
         },
         module: {
-            rules: buildLoaders()
+            rules: buildLoaders(options)
         },
         resolve: buildResolvers(),
         plugins: buildPlugins(options),
