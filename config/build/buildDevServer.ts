@@ -6,5 +6,7 @@ export function buildDevServer(options: BuildOptions): WebpackDevServerConfigura
     return {
         port: options.port,
         open: true, // auto open window of browser
+        hot: true, // hot reload
+        historyApiFallback: true, // if we have 404 error, we will be redirected to index.html
     }
 }
