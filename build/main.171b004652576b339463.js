@@ -42030,8 +42030,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
 /* harmony import */ var _index_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.scss */ "./src/index.scss");
-/* harmony import */ var _Pages_MainPage_MainPage_async__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Pages/MainPage/MainPage.async */ "./src/Pages/MainPage/MainPage.async.tsx");
-/* harmony import */ var _Pages_AboutPage_AboutPage_async__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Pages/AboutPage/AboutPage.async */ "./src/Pages/AboutPage/AboutPage.async.tsx");
+/* harmony import */ var _Pages_MainPage_MainPage_async__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/MainPage/MainPage.async */ "./src/Pages/MainPage/MainPage.async.tsx");
+/* harmony import */ var _Pages_AboutPage_AboutPage_async__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/AboutPage/AboutPage.async */ "./src/Pages/AboutPage/AboutPage.async.tsx");
 var __assign = (undefined && undefined.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -42057,7 +42057,7 @@ var App = function () {
 
 /***/ "./src/Pages/AboutPage/AboutPage.async.tsx":
 /*!*************************************************!*\
-  !*** ./src/Pages/AboutPage/AboutPage.async.tsx ***!
+  !*** ./src/pages/AboutPage/AboutPage.async.tsx ***!
   \*************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -42075,7 +42075,7 @@ var AboutPageAsync = (0,react__WEBPACK_IMPORTED_MODULE_0__.lazy)(function () { r
 
 /***/ "./src/Pages/MainPage/MainPage.async.tsx":
 /*!***********************************************!*\
-  !*** ./src/Pages/MainPage/MainPage.async.tsx ***!
+  !*** ./src/pages/MainPage/MainPage.async.tsx ***!
   \***********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 

@@ -3,7 +3,7 @@
 
 /***/ "./src/Pages/AboutPage/AboutPage.tsx":
 /*!*******************************************!*\
-  !*** ./src/Pages/AboutPage/AboutPage.tsx ***!
+  !*** ./src/pages/AboutPage/AboutPage.tsx ***!
   \*******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
