@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/KolesnikovP/blog#readme",
   "devDependencies": {
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
     "@svgr/webpack": "^7.0.0",
     "@types/node": "^17.0.21",
     "@types/webpack": "^5.28.1",
@@ -29,6 +30,7 @@
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.5",
+    "react-refresh": "^0.14.0",
     "sass": "^1.62.0",
     "sass-loader": "^13.2.2",
     "style-loader": "^3.3.2",
