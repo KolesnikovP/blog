@@ -5,6 +5,17 @@ import {BuildOptions} from "./types/config";
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     const {isDev} = options
 
+    const babelLoader =  {
+        test: /\.m?(js|ts|jsx|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+            loader: "babel-loader",
+            options: {
+                presets: ['@babel/preset-env']
+            }
+        }
+    }
+
     const fileLoader = {
         test: /\.(png|jpe?g|gif|woff)$/i, // if we want to add some fonts then it also do it here
         use: [
@@ -41,10 +52,13 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         use: 'ts-loader',
         exclude: /node_modules/,
     }
+
+    //
     return [
+        fileLoader,
+        svgLoader,
+        babelLoader,
         typescriptLoader,
         cssLoader,
-        svgLoader,
-        fileLoader
     ]
 }
