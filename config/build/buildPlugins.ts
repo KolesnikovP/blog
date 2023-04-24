@@ -3,7 +3,7 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import webpack from "webpack";
 import {BuildOptions} from "./types/config";
 
-export function buildPlugins({paths}: BuildOptions): webpack.WebpackPluginInstance[] {
+export function buildPlugins({paths, isDev}: BuildOptions): webpack.WebpackPluginInstance[] {
 return [
     new MiniCssExtractPlugin({
         filename: 'css/[name].[contenthash].css',
@@ -16,6 +16,10 @@ return [
         handler: (percentage: number, message: string, ...args: any) => {
             console.log(`${(percentage * 100).toFixed(2)}%`, message, ...args);
         }
+    }),
+    // с его помощью можно прокидывать глобальные переменные
+    new webpack.DefinePlugin({
+        __IS_DEV__: JSON.stringify(isDev)
     })
 ]
 }
