@@ -23,6 +23,7 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
       __IS_DEV__: JSON.stringify(isDev),
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new ReactRefreshWebpackPlugin(),
+    // {overlay: false} - для того чтобы не было ошибке на скрине браузера
+    new ReactRefreshWebpackPlugin({ overlay: false }),
   ];
 }
