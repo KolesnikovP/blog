@@ -3,18 +3,22 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from 'path';
+
 export default {
-  // All imported modules in your tests should be mocked automatically
-  // automock: false,
-
-  // Stop running tests after `n` failures
-  // bail: 0,
-
-  // The directory where Jest should store its cached dependency information
-  // cacheDirectory: "/private/var/folders/fw/lf_cjp1s2r9297tdrjksb7lc0000gn/T/jest_dx",
-
   // The root directory that Jest should scan for tests and modules within
   rootDir: '../../',
+
+  // for react testing library
+  setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+
+  moduleNameMapper: {
+    // '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+    //   '<rootDir>/__mocks__/fileMock.js',
+    '\\.(s?css)$': 'identity-obj-proxy',
+    // mock for svg imports. Просто маппер который будет возвращать компонент. Саму свг тестировать не будем
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+  },
 
   // The glob patterns Jest uses to detect test files
   testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
@@ -33,6 +37,11 @@ export default {
   // An array of directory names to be searched recursively up from the requiring module's location
   moduleDirectories: [
     'node_modules',
+    'src',
+  ],
+
+  modulePaths: [
+    '<rootDir>src',
   ],
 
   // An array of file extensions your modules use
