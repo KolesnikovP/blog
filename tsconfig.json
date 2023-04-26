@@ -19,5 +19,11 @@
     "compilerOptions": {
       "module": "CommonJS" 
     }
-  } 
+  },
+  "include": [
+    // for react testing library
+    "./config/jest/setupTests.ts",
+    "./src/**/*.ts",
+    "./src/**/*.tsx"
+  ]
 }
