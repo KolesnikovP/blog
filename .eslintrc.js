@@ -40,7 +40,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'jsx-a11y/no-static-element-interactions': 'warn',
     'max-len': ['warn', { code: 140 }],
-    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid'] }],
+    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
   },
   globals: {
     __IS_DEV__: true,
