@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --env port=3000",
-    "unit": "jest --config ./config/jest/jest.config.ts",
     "build:dev": "webpack --config webpack.config.ts --env mode=development",
     "build:prod": "webpack --config webpack.config.ts --env mode=production",
     "lint": "eslint '**/*.{ts,tsx}'",
@@ -13,8 +12,10 @@
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "build-storybook": "build-storybook -c ./config/storybook",
-    "loki": "npx loki test"
+    "storybook:build": "build-storybook -c ./config/storybook",
+    "test:ui": "npx loki test",
+    "test:ui:ok": "npx loki approve",
+    "test:unit": "jest --config ./config/jest/jest.config.ts"
   },
   "repository": {
     "type": "git",
