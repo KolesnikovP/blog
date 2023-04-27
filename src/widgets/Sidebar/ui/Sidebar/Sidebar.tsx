@@ -4,6 +4,10 @@ import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { useTranslation } from 'react-i18next';
 import Button, { ButtonTheme } from 'shared/ui/Button/ui/Button';
+import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import AboutIcon from 'shared/assets/icons/AboutIcon.svg';
+import HomeIcon from 'shared/assets/icons/HomeIcon.svg';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -37,9 +41,33 @@ const Sidebar = (props: SidebarProps) => {
       >
         {collapsed ? '>' : '<'}
       </Button>
+      <div className={cls.items}>
+        <div>
+          <AppLink
+            theme={AppLinkTheme.SECONDARY}
+            to={RoutePath.main}
+            className={cls.item}
+          >
+            <HomeIcon className={cls.icon} />
+            <span className={cls.link}>{t('Главная')}</span>
+          </AppLink>
+        </div>
+
+        <div>
+          <AppLink
+            theme={AppLinkTheme.SECONDARY}
+            to={RoutePath.about}
+            className={cls.item}
+          >
+            <AboutIcon className={cls.icon} />
+            <span className={cls.link}>{t('О проекте')}</span>
+          </AppLink>
+        </div>
+
+      </div>
       <div className={cls.switchers}>
         <ThemeSwitcher />
-        <LangSwitcher className={cls.LangSwitcher} />
+        <LangSwitcher className={cls.LangSwitcher} short={collapsed} />
       </div>
     </div>
   );
