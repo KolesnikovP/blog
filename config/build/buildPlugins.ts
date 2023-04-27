@@ -7,7 +7,7 @@ import webpack from 'webpack';
 import { BuildOptions } from './types/config';
 
 export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
-  return [
+  const plugins = [
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
       chunkFilename: 'css/[name].[contenthash].css',
@@ -25,8 +25,14 @@ export function buildPlugins({ paths, isDev }: BuildOptions): webpack.WebpackPlu
       __IS_DEV__: JSON.stringify(isDev),
     }),
     new webpack.HotModuleReplacementPlugin(),
-    // {overlay: false} - для того чтобы не было ошибке на скрине браузера
-    new ReactRefreshWebpackPlugin({ overlay: false }),
-    new BundleAnalyzerPlugin({ openAnalyzer: false }),
   ];
+
+  if (isDev) {
+  // {overlay: false} - для того чтобы не было ошибке на скрине браузера
+    plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
+
+    plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));
+  }
+
+  return plugins;
 }
