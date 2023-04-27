@@ -39,3 +39,60 @@ OutlineDark.args = {
   theme: ButtonTheme.OUTLINE,
 };
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Background = Template.bind({});
+Background.args = {
+  children: 'Text',
+  theme: ButtonTheme.BACKGROUND,
+};
+
+export const BackgroundInverted = Template.bind({});
+BackgroundInverted.args = {
+  children: 'Text',
+  theme: ButtonTheme.BACKGROUND_INVERTED,
+};
+
+export const SquareSizeM = Template.bind({});
+SquareSizeM.args = {
+  square: true,
+  children: 'T',
+  theme: ButtonTheme.OUTLINE,
+  size: 'size_m',
+};
+
+export const SquareSizeL = Template.bind({});
+SquareSizeL.args = {
+  square: true,
+  children: 'T',
+  theme: ButtonTheme.OUTLINE,
+  size: 'size_l',
+};
+
+export const SquareSizeXL = Template.bind({});
+SquareSizeXL.args = {
+  square: true,
+  children: 'T',
+  theme: ButtonTheme.OUTLINE,
+  size: 'size_xl',
+};
+
+export const OutlineSizeM = Template.bind({});
+OutlineSizeM.args = {
+  children: 'Text',
+  theme: ButtonTheme.OUTLINE,
+  size: 'size_m',
+};
+
+export const OutlineSizeL = Template.bind({});
+OutlineSizeL.args = {
+  children: 'Text',
+  theme: ButtonTheme.OUTLINE,
+  size: 'size_l',
+};
+
+export const OutlineSizeXL = Template.bind({});
+OutlineSizeXL.args = {
+  children: 'Text',
+  theme: ButtonTheme.OUTLINE,
+  size: 'size_xl',
+};
