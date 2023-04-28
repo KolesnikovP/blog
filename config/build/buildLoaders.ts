@@ -46,7 +46,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
       'sass-loader',
     ],
   };
-  // if we don't use TS than we need to add babel-loader. ts-loader include support tsx
+  // if we don't use TS than we need to add babel-loaders. ts-loaders include support tsx
   const typescriptLoader = {
     test: /\.tsx?$/,
     use: 'ts-loader',
