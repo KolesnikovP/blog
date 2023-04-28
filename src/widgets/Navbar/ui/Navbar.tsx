@@ -21,6 +21,7 @@ const Navbar = ({ className }: NavbarProps) => {
     <div className={classNames(cls.Navbar)}>
       <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onToggleModal}>
         {t('Войти')}
+        {/* eslint-disable-next-line i18next/no-literal-string */}
         <Modal isOpen={isAuthModal} onClose={onToggleModal}>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aspernatur error itaque rerum sequi veniam?
         </Modal>
