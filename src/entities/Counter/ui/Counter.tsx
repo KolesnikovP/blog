@@ -16,13 +16,12 @@ const Counter = () => {
   };
 
   return (
-    <div>
+    <div data-testid='counter'>
+      <h1 data-testid='value-title'>{counterValue}</h1>
       {/* eslint-disable-next-line i18next/no-literal-string */}
-      <h1>value = {counterValue}</h1>
+      <Button data-testid='increment-btn' onClick={increment}>increment</Button>
       {/* eslint-disable-next-line i18next/no-literal-string */}
-      <Button onClick={increment}>increment</Button>
-      {/* eslint-disable-next-line i18next/no-literal-string */}
-      <Button onClick={decrement}>decrement</Button>
+      <Button data-testid='decrement-btn' onClick={decrement}>decrement</Button>
     </div>
   );
 };
