@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from './ThemeContext';
 
 interface UseThemeResult {
@@ -13,10 +13,12 @@ export function useTheme(): UseThemeResult {
     const newTheme = theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT;
     setTheme(newTheme);
 
-    document.body.className = newTheme;
-
     localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
   };
+
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
 
   return {
     theme,
