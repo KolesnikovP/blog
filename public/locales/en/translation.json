@@ -9,5 +9,7 @@
   "Главная": "Main",
   "О проекте": "About",
   "Короткий язык": "Eng",
-  "Войти": "Войти"
+  "Войти": "Login",
+  "username": "username",
+  "password": "password"
 }
