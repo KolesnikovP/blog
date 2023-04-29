@@ -11,6 +11,7 @@ interface InputProps extends HTMLInputProps {
   value?: string;
   onChange?: (value: string) => void;
   autofocus?: boolean;
+  bold?: boolean
 }
 
 export const Input = memo((props: InputProps) => {
@@ -21,6 +22,7 @@ export const Input = memo((props: InputProps) => {
     type = 'text',
     placeholder,
     autofocus,
+    bold,
     ...otherProps
   } = props;
 
@@ -60,7 +62,7 @@ export const Input = memo((props: InputProps) => {
     <div className={classNames(cls.InputWrapper, {}, [className])}>
       { placeholder && (
         <div className={cls.placeholder}>
-          {`${placeholder}>`}
+          {bold ? <b>{`${placeholder}>`}</b> : `${placeholder}>`}
         </div>
       )}
 
