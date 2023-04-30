@@ -50,7 +50,7 @@ const Navbar = ({ className }: NavbarProps) => {
     <div className={classNames(cls.Navbar)}>
       <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onShowModal}>
         {t('Войти')}
-        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+        {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
       </Button>
     </div>
   );
