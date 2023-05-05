@@ -7,12 +7,43 @@ import { loginByUsername } from './loginByUsername';
 
 jest.mock('axios');
 
-// Поскольку ts не подхватывает типы в таких конструкциях как замоканные запросы, мы можем сделать так
-const mockedAxios = jest.mocked(axios, { shallow: false });
+const mockedAxios = jest.mocked(axios, true);
 
 describe('loginByUsername.test', () => {
+  // let dispatch: Dispatch;
+  // let getState: () => StateSchema;
+  //
+  // beforeEach(() => {
+  //     dispatch = jest.fn();
+  //     getState = jest.fn();
+  // });
+
+  // test('success login', async () => {
+  //     const userValue = { username: '123', id: '1' };
+  //     mockedAxios.post.mockReturnValue(Promise.resolve({ data: userValue }));
+  //     const action = loginByUsername({ username: '123', password: '123' });
+  //     const result = await action(dispatch, getState, undefined);
+  //
+  //     expect(dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue));
+  //     expect(dispatch).toHaveBeenCalledTimes(3);
+  //     expect(mockedAxios.post).toHaveBeenCalled();
+  //     expect(result.meta.requestStatus).toBe('fulfilled');
+  //     expect(result.payload).toEqual(userValue);
+  // });
+  //
+  // test('error login', async () => {
+  //     mockedAxios.post.mockReturnValue(Promise.resolve({ status: 403 }));
+  //     const action = loginByUsername({ username: '123', password: '123' });
+  //     const result = await action(dispatch, getState, undefined);
+  //
+  //     expect(dispatch).toHaveBeenCalledTimes(2);
+  //     expect(mockedAxios.post).toHaveBeenCalled();
+  //     expect(result.meta.requestStatus).toBe('rejected');
+  //     expect(result.payload).toBe('error');
+  // });
+
   test('success login', async () => {
-    const userValue = { username: '123', id: 'id' };
+    const userValue = { username: '123', id: '1' };
     mockedAxios.post.mockReturnValue(Promise.resolve({ data: userValue }));
 
     const thunk = new TestAsyncThunk(loginByUsername);
@@ -36,35 +67,3 @@ describe('loginByUsername.test', () => {
     expect(result.payload).toBe('error');
   });
 });
-
-// this is work. But i want to try use some shared class for all thunk test
-// let dispatch: Dispatch;
-// let getState: () => StateSchema;
-//
-// beforeEach(() => {
-//   dispatch = jest.fn();
-//   getState = jest.fn();
-// });
-// test('success login', async () => {
-//   const userValue = { username: '123', id: 'id' };
-//   mockedAxios.post.mockReturnValue(Promise.resolve({ data: userValue }));
-//   const action = loginByUsername({ username: '123', password: '123' });
-//   const result = await action(dispatch, getState, undefined);
-//
-//   expect(dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue));
-//   expect(dispatch).toHaveBeenCalledTimes(3);
-//   expect(mockedAxios.post).toHaveBeenCalled();
-//   expect(result.meta.requestStatus).toBe('fulfilled');
-//   expect(result.payload).toEqual(userValue);
-// });
-//
-// test('error login', async () => {
-//   mockedAxios.post.mockReturnValue(Promise.resolve({ status: 403 }));
-//   const action = loginByUsername({ username: '123', password: '123' });
-//   const result = await action(dispatch, getState, undefined);
-//
-//   expect(dispatch).toHaveBeenCalledTimes(2);
-//   expect(mockedAxios.post).toHaveBeenCalled();
-//   expect(result.meta.requestStatus).toBe('rejected');
-//   expect(result.payload).toBe('error');
-// });
