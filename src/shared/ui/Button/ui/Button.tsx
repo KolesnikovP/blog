@@ -1,5 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { ButtonHTMLAttributes, FC, ReactNode } from 'react';
+import {
+  ButtonHTMLAttributes, FC, memo, ReactNode,
+} from 'react';
 import cls from './Button.module.scss';
 
 export enum ButtonTheme {
@@ -19,7 +21,9 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     disabled?: boolean;
 }
 
-const Button: FC<ButtonProps> = (props) => {
+// ДА, мы не оборачиваем компоненты в мемо, НО! Это кнопка, там обычно хронятся примитивы
+// без древовидной вложенной структуры. Хранить такое дешево
+const Button = memo((props: ButtonProps) => {
   const {
     className,
     theme,
@@ -45,6 +49,6 @@ const Button: FC<ButtonProps> = (props) => {
       {children}
     </button>
   );
-};
+});
 
 export default Button;
