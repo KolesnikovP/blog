@@ -5,18 +5,20 @@ import {
   AnyAction, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { CombinedState } from 'redux';
+import { ProfileSchema } from 'entities/Profile';
 
 export interface StateSchema {
   counter: CounterSchema;
   user: UserSchema;
 
   // async reducers
+  profile?: ProfileSchema;
   loginForm?: LoginSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
 
-export interface ReduceManager {
+export interface ReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>
   reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
   add: (key: StateSchemaKey, reducer: Reducer) => void;
@@ -24,5 +26,5 @@ export interface ReduceManager {
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
-  reducerManager: ReduceManager;
+  reducerManager: ReducerManager;
 }
