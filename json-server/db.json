@@ -25,5 +25,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Petr",
+    "lastname": "Kolesnikov",
+    "age": 29,
+    "currency": "rub",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "admin",
+    "avatar": "https://static.wikia.nocookie.net/shingeki-no-kyojin/images/2/22/Levi_Ackerman_854_%28Anime%29.png/revision/latest?cb=20210125035215&path-prefix=es"
+  }
 }
