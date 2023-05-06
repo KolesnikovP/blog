@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Link, LinkProps } from 'react-router-dom';
-import { FC, ReactNode } from 'react';
+import { FC, memo, ReactNode } from 'react';
 import cls from './AppLink.module.scss';
 
 export enum AppLinkTheme {
@@ -14,7 +14,8 @@ interface AppLinkProps extends LinkProps {
     theme?: AppLinkTheme;
 }
 
-const AppLink: FC<AppLinkProps> = (props) => {
+// Тоже самое и с линкой. Она дешевая, как правило без объектов. Мемо тут гуд
+const AppLink = memo((props: AppLinkProps) => {
   const {
     className,
     children,
@@ -32,6 +33,6 @@ const AppLink: FC<AppLinkProps> = (props) => {
       {children}
     </Link>
   );
-};
+});
 
 export default AppLink;
