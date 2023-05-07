@@ -30,7 +30,7 @@ export const Input = memo((props: InputProps) => {
    * @param onBlur - когда из инпута выходим
    * @onFocus - когда мы нажимаем на инпут
    */
-  const ref = useRef<HTMLInputElement>();
+  const ref = useRef<HTMLInputElement>(null);
   const [isFocused, setIsFocused] = useState(false);
   const [caretPosition, setCaretPosition] = useState(0);
 

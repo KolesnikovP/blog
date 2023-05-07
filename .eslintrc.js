@@ -47,6 +47,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error', // Checks effect
     'no-param-reassign': 'off',
     'react/jsx-one-expression-per-line': 'off',
+    'no-undef': 'off',
   },
   globals: {
     __IS_DEV__: true,

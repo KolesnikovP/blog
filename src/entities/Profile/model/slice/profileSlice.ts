@@ -12,12 +12,11 @@ const initialState: ProfileSchema = {
 export const profileSlice = createSlice({
   name: 'profile',
   initialState,
-  reducers: { },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchProfileData.pending, (
         state,
-        action: PayloadAction<Profile>,
       ) => {
         state.error = undefined;
         state.isLoading = true;

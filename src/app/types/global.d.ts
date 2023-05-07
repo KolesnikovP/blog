@@ -1,3 +1,7 @@
+type DeepPartial<T> = T extends object ? {
+    [P in keyof T]?: DeepPartial<T[P]>
+}: T;
+
 declare module '*.css' {
     interface IClassNames {
         [className: string]: string
