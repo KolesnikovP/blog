@@ -56,3 +56,27 @@ Error.args = {
   text: 'Text',
   theme: 'error',
 };
+
+export const AlignCenter = Template.bind({});
+AlignCenter.args = {
+  title: 'Title',
+  text: 'Text',
+  theme: 'error',
+  align: 'center',
+};
+
+export const AlignLeft = Template.bind({});
+AlignLeft.args = {
+  title: 'Title',
+  text: 'Text',
+  theme: 'error',
+  align: 'left',
+};
+
+export const AlignRight = Template.bind({});
+AlignRight.args = {
+  title: 'Title',
+  text: 'Text',
+  theme: 'error',
+  align: 'right',
+};
