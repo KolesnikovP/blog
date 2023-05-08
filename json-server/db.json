@@ -29,9 +29,9 @@
     "first": "Petr",
     "lastname": "Kolesnikov",
     "age": 29,
-    "currency": "rub",
+    "currency": "EUR",
     "country": "Russia",
-    "city": "Moscow",
+    "city": "SPb",
     "username": "admin",
     "avatar": "https://images.immediate.co.uk/production/volatile/sites/3/2022/04/Screenshot-2022-05-10-at-11.13.42-b2ecc46-e1663927354655.png"
   }
