@@ -18,3 +18,10 @@ Primary.args = {
   placeholder: 'Text',
   value: '1234',
 };
+
+export const ReadOnly = Template.bind({});
+ReadOnly.args = {
+  placeholder: 'Text',
+  value: '1234',
+  readonly: true,
+};
