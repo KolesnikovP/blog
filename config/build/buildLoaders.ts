@@ -1,20 +1,12 @@
 import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
+import { buildBabelLoader } from './loaders/buildBabelLoader';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   const { isDev } = options;
 
-  const babelLoader = {
-    test: /\.m?(js|ts|jsx|tsx)$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env'],
-      },
-    },
-  };
+  const babelLoader = buildBabelLoader(options);
 
   const fileLoader = {
     test: /\.(png|jpe?g|gif|woff)$/i, // if we want to add some fonts then it also do it here

@@ -28,13 +28,12 @@ export function buildPlugins({
       __API__: JSON.stringify(apiUrl),
       __PROJECT__: JSON.stringify(project),
     }),
-    new webpack.HotModuleReplacementPlugin(),
   ];
 
   if (isDev) {
   // {overlay: false} - для того чтобы не было ошибке на скрине браузера
     plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
-
+    plugins.push(new webpack.HotModuleReplacementPlugin());
     plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));
   }
 
