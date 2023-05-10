@@ -23,6 +23,13 @@ export default {
   // The glob patterns Jest uses to detect test files
   testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
 
+  // A set of global variables that need to be available in all test environments
+  globals: {
+    __IS_DEV__: true,
+    __API__: '',
+    __PROJECT__: 'jest',
+  },
+
   // Automatically clear mock calls, instances, contexts and results before every test
   clearMocks: true,
 
@@ -55,12 +62,6 @@ export default {
     'json',
     'node',
   ],
-
-  // A set of global variables that need to be available in all test environments
-  globals: {
-    __IS_DEV__: true,
-    __API__: '',
-  },
 
   // Indicates whether the coverage information should be collected while executing the test
   // collectCoverage: false,
