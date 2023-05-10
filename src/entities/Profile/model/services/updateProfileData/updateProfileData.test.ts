@@ -4,16 +4,6 @@ import { Currency } from 'entities/Currency';
 import { ValidateProfileError } from 'entities/Profile';
 import { updateProfileData } from './updateProfileData';
 
-const profileData = {
-  username: 'admin',
-  age: 22,
-  country: Country.Ukraine,
-  lastname: 'ulbi tv',
-  first: 'asd',
-  city: 'asf',
-  currency: Currency.USD,
-};
-
 const data = {
   username: 'admin',
   age: 22,
