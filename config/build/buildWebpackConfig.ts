@@ -17,6 +17,7 @@ export function buildWebpackConfig(options: BuildOptions): webpack.Configuration
       path: paths.output,
       filename: '[name].[contenthash].js', // [name] is the entry point name [contenthash] is a hash of the content
       clean: true, // clean the dist folder before each build
+      publicPath: '/', // for correct routing in dev ?(better read docs webpack)
     },
     module: {
       rules: buildLoaders(options),
