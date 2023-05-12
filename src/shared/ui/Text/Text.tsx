@@ -4,19 +4,22 @@ import cls from './Text.module.scss';
 
 interface TextProps {
   className?: string;
-  title?: string;
-  text?: string;
-  theme?: 'primary' | 'error'
-  align?: 'right' | 'left' | 'center'
+  title?: string | number;
+  text?: string | number;
+  theme?: 'primary' | 'error';
+  align?: 'right' | 'left' | 'center';
+  size?: 'size_m' | 'size_l';
 }
 
 export const Text = memo((props: TextProps) => {
   const {
-    className, title, text, theme = 'primary', align = 'left',
+    className, title, text, theme = 'primary', align = 'left', size = 'size_l',
   } = props;
 
   const mods: Mods = {
     [cls.error]: theme === 'error',
+    [cls.textSizeM]: size === 'size_m',
+    [cls.textSizeL]: size === 'size_l',
   };
 
   return (

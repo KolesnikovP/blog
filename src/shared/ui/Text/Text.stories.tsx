@@ -80,3 +80,19 @@ AlignRight.args = {
   theme: 'error',
   align: 'right',
 };
+
+export const SizeM = Template.bind({});
+SizeM.args = {
+  title: 'Title',
+  text: 'Text',
+  align: 'right',
+  size: 'size_m',
+};
+
+export const SizeL = Template.bind({});
+SizeL.args = {
+  title: 'Title',
+  text: 'Text',
+  align: 'right',
+  size: 'size_l',
+};
