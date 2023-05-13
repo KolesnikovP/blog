@@ -13,7 +13,7 @@ interface TextProps {
 
 export const Text = memo((props: TextProps) => {
   const {
-    className, title, text, theme = 'primary', align = 'left', size = 'size_l',
+    className, title, text, theme = 'primary', align = 'left', size = 'size_m',
   } = props;
 
   const mods: Mods = {
