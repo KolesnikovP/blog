@@ -4,9 +4,14 @@
   padding: 20px;
   position: relative;
   background: var(--code-bg);
+  overflow: auto;
 }
 
 .copyBtn {
   position: absolute;
   right: 20px;
+}
+
+.copyIcon path {
+  stroke: var(--primary-color);
 }
