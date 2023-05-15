@@ -133,13 +133,15 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://images.immediate.co.uk/production/volatile/sites/3/2022/04/Screenshot-2022-05-10-at-11.13.42-b2ecc46-e1663927354655.png"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role":  "USER"
+      "role":  "USER",
+      "avatar": "https://images.immediate.co.uk/production/volatile/sites/3/2022/04/Screenshot-2022-05-10-at-11.13.42-b2ecc46-e1663927354655.png"
     }
   ],
   "profile": {
