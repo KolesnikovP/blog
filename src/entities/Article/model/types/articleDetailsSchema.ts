@@ -1,7 +1,7 @@
-import { IArticle } from './IArticle';
+import { Article } from './article';
 
 export interface ArticleDetailsSchema {
   isLoading: boolean
   error?: string
-  data?: IArticle
+  data?: Article
 }
