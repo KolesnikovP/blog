@@ -48,6 +48,8 @@ module.exports = {
     'no-param-reassign': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'no-undef': 'off',
+    // I know when I can use key as index and when I can't
+    'react/no-array-index-key': 'off',
   },
   globals: {
     __IS_DEV__: true,
