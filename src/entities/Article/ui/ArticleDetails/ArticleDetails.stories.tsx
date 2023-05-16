@@ -2,11 +2,11 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article } from 'entities/Article';
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/article';
+import { IArticle } from 'entities/Article';
+import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/IArticle';
 import { ArticleDetails } from './ArticleDetails';
 
-const artcicleContent: Article = {
+const artcicleContent: IArticle = {
   id: '1',
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2022 год?',
