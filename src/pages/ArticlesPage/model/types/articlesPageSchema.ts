@@ -10,4 +10,7 @@ export interface ArticlesPageSchema extends EntityState<Article>{
   page: number;
   limit?: number;
   hasMore: boolean;
+
+  // @param _inited - проверка инициализировался наш стейт или нет
+  _inited: boolean
 }

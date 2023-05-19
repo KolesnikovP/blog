@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { ArticleList, ArticleView, ArticleViewSelector } from 'entities/Article';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -8,10 +7,10 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Page } from 'shared/ui/Page/Page';
 import { fetchNextArticlePage } from 'pages/ArticlesPage/model/services/fetchNextArticlePage/fetchNextArticlePage';
-import { fetchArticlesPageList } from '../../model/services/fetchArticlesPageList/fetchArticlesPageList';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import {
-  getArticlesPageError, getArticlesPageHasMore,
-  getArticlesPageIsLoading, getArticlesPageNum,
+  getArticlesPageError,
+  getArticlesPageIsLoading,
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import cls from './ArticlesPage.module.scss';
@@ -25,9 +24,10 @@ const reducersList: ReducersList = {
   articlesPage: articlesPageReducer,
 };
 
+// TODO: Need test when dispatches to do when state is inited, and when state didn't inited
+
 const ArticlesPage = (props: ArticlesPageProps) => {
   const { className } = props;
-  const { t } = useTranslation('articles');
 
   const articles = useSelector(getArticles.selectAll);
   const isLoading = useSelector(getArticlesPageIsLoading);
@@ -45,14 +45,11 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(fetchArticlesPageList({
-      page: 1,
-    }));
+    dispatch(initArticlesPage());
   });
 
   return (
-    <DynamicModuleLoader reducers={reducersList}>
+    <DynamicModuleLoader reducers={reducersList} removeAfterUnmount={false}>
       <Page
         onScrollEnd={onLoadNextPart}
         className={classNames(cls.ArticlesPage, {}, [className])}
