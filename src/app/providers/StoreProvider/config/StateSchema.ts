@@ -27,12 +27,18 @@ export interface StateSchema {
 }
 
 export type StateSchemaKey = keyof StateSchema;
+export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
 
 export interface ReducerManager {
   getReducerMap: () => ReducersMapObject<StateSchema>
   reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
   add: (key: StateSchemaKey, reducer: Reducer) => void;
-  remove: (key: StateSchemaKey) => void
+  remove: (key: StateSchemaKey) => void;
+
+  // FIXME: we already have reducersList in getReducerMap function. May be we can use it?
+  // @param OptionalRecord - кастомный тип который как обычный Record, но с необязательными полями
+  // true - редусер вмонитован, false - не был или уже удален
+  getMountedReducers: () => MountedReducers;
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {

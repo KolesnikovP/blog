@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { ArticleList, ArticleView, ArticleViewSelector } from 'entities/Article';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
@@ -29,7 +28,6 @@ const reducersList: ReducersList = {
 
 const ArticlesPage = (props: ArticlesPageProps) => {
   const { className } = props;
-  const { t } = useTranslation('articles');
 
   const articles = useSelector(getArticles.selectAll);
   const isLoading = useSelector(getArticlesPageIsLoading);
@@ -51,7 +49,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   });
 
   return (
-    <DynamicModuleLoader reducers={reducersList}>
+    <DynamicModuleLoader reducers={reducersList} removeAfterUnmount={false}>
       <Page
         onScrollEnd={onLoadNextPart}
         className={classNames(cls.ArticlesPage, {}, [className])}
