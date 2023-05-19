@@ -7,7 +7,11 @@ interface FetchArticlesPageListProps {
   page?: number
 }
 
-export const fetchArticlesPageList = createAsyncThunk<Article[], FetchArticlesPageListProps, ThunkConfig<string>>(
+export const fetchArticlesPageList = createAsyncThunk<
+  Article[],
+  FetchArticlesPageListProps,
+  ThunkConfig<string>
+>(
   'articlesPage/fetchArticlesPageList',
   async (props, thunkAPI) => {
     const { extra, rejectWithValue, getState } = thunkAPI;

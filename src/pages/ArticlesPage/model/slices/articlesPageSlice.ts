@@ -37,7 +37,7 @@ const articlesPageSlice = createSlice({
       const view = localStorage.getItem(ARTICLE_VIEW_LOCALSTORAGE_KEY) as ArticleView;
       state.view = view;
       // Если у нас плитка, то подгружаем по 9, если список то по 4
-      state.limit = view === ArticleView.TILE ? 9 : 4;
+      state.limit = view === ArticleView.LIST ? 4 : 9;
     },
   },
   extraReducers: (builder) => {

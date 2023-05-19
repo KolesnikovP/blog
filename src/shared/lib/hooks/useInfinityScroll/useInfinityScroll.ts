@@ -19,7 +19,7 @@ export function useInfinityScroll(args: UseInfinityScrollOptions) {
 
     if (callback) {
       const options = {
-        root: wrapperRef.current,
+        root: wrapperElement,
         rootMargin: '0px',
         threshold: 1.0,
       };
@@ -30,7 +30,7 @@ export function useInfinityScroll(args: UseInfinityScrollOptions) {
         }
       }, options);
 
-      observer.observe(wrapperElement);
+      observer.observe(triggerElement);
     }
 
     return () => {
