@@ -8,10 +8,10 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Page } from 'shared/ui/Page/Page';
 import { fetchNextArticlePage } from 'pages/ArticlesPage/model/services/fetchNextArticlePage/fetchNextArticlePage';
-import { fetchArticlesPageList } from '../../model/services/fetchArticlesPageList/fetchArticlesPageList';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import {
-  getArticlesPageError, getArticlesPageHasMore,
-  getArticlesPageIsLoading, getArticlesPageNum,
+  getArticlesPageError,
+  getArticlesPageIsLoading,
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import cls from './ArticlesPage.module.scss';
@@ -24,6 +24,8 @@ interface ArticlesPageProps {
 const reducersList: ReducersList = {
   articlesPage: articlesPageReducer,
 };
+
+// TODO: Need test when dispatches to do when state is inited, and when state didn't inited
 
 const ArticlesPage = (props: ArticlesPageProps) => {
   const { className } = props;
@@ -45,10 +47,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(fetchArticlesPageList({
-      page: 1,
-    }));
+    dispatch(initArticlesPage());
   });
 
   return (

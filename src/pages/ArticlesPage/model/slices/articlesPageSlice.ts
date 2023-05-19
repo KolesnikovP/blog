@@ -24,6 +24,7 @@ const articlesPageSlice = createSlice({
     entities: {},
     page: 1,
     hasMore: true,
+    _inited: false,
   }),
   reducers: {
     setView: (state, action: PayloadAction<ArticleView>) => {
@@ -38,6 +39,7 @@ const articlesPageSlice = createSlice({
       state.view = view;
       // Если у нас плитка, то подгружаем по 9, если список то по 4
       state.limit = view === ArticleView.LIST ? 4 : 9;
+      state._inited = true;
     },
   },
   extraReducers: (builder) => {
