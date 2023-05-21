@@ -14,11 +14,11 @@
   "articles": [
     {
       "id": "1",
-      "title": "Javascript news",
+      "title": "Javascript news HOT",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "26.02.2023",
       "userId": "1",
       "type": [
         "IT"
@@ -86,11 +86,11 @@
     },
     {
       "id": "2",
-      "title": "Golang new",
+      "title": "Golang new 2023",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.nixsolutions.com/uploads/2020/07/Golang.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 100,
+      "createdAt": "20.01.2023",
       "userId": "1",
       "type": [
         "IT"
@@ -113,8 +113,8 @@
       "title": "Angular news",
       "subtitle": "What news in Angular? - nothing. this is peas of sheet",
       "img": "https://www.searchenginejournal.com/wp-content/uploads/2019/04/the-seo-guide-to-angular.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 34231,
+      "createdAt": "26.12.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -158,11 +158,11 @@
     },
     {
       "id": "5",
-      "title": "Python new",
+      "title": "Python new HOT",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.nixsolutions.com/uploads/2020/07/Golang.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 333,
+      "createdAt": "26.03.2023",
       "userId": "1",
       "type": [
         "IT"
@@ -185,8 +185,8 @@
       "title": "Rust news",
       "subtitle": "What news in Angular? - nothing. this is peas of sheet",
       "img": "https://www.searchenginejournal.com/wp-content/uploads/2019/04/the-seo-guide-to-angular.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 748,
+      "createdAt": "26.02.2020",
       "userId": "1",
       "type": [
         "IT"
@@ -209,8 +209,8 @@
       "title": "Kotlin news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://admin.davidson.fr/wp-content/uploads/nestjs-logo.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 123,
+      "createdAt": "26.02.2021",
       "userId": "1",
       "type": [
         "IT"
@@ -233,8 +233,8 @@
       "title": "C++ news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.nixsolutions.com/uploads/2020/07/Golang.png",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "views": 111,
+      "createdAt": "26.02.2018",
       "userId": "1",
       "type": [
         "IT"
