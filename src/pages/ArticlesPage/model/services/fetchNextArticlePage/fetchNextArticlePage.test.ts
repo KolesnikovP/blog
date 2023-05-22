@@ -8,7 +8,7 @@ describe('fetchProfileData.test', () => {
   test('success', async () => {
     const thunk = new TestAsyncThunk(fetchNextArticlePage, {
       articlesPage: {
-        page: 2,
+        page: 3,
         ids: [],
         entities: {},
         limit: 5,
@@ -21,8 +21,9 @@ describe('fetchProfileData.test', () => {
 
     // 4 - потому что panding, fulfield, еще два внутри самого экшна
     expect(thunk.dispatch).toBeCalledTimes(4);
+    // Убрал его из парамметров поскольку сейчас он тянет страницу из селестора
     // убеждаемся что фетч улетел с нужными параметрами
-    expect(fetchArticlesPageList).toBeCalledWith({ page: 3 });
+    // expect(fetchArticlesPageList).toBeCalledWith({ page: 3 });
   });
 
   test('fetchArticleList not called', async () => {
