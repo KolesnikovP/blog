@@ -374,14 +374,14 @@
     },
     {
       "id": "15",
-      "title": "NOSQL news",
+      "title": "Эконономическая статься news",
       "subtitle": "Что нового в JS за 2022 год?",
       "img": "https://www.nixsolutions.com/uploads/2020/07/Golang.png",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -398,14 +398,14 @@
     },
     {
       "id": "16",
-      "title": "expressjs news",
-      "subtitle": "What news in Angular? - nothing. this is peas of sheet",
+      "title": "НАУЧНАЯ СТАТЬЯ",
+      "subtitle": "ОХУЕННАЯ научная статья",
       "img": "https://www.searchenginejournal.com/wp-content/uploads/2019/04/the-seo-guide-to-angular.png",
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
