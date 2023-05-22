@@ -6,15 +6,18 @@ import cls from './Card.module.scss';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement>{
   className?: string;
-  children: ReactNode
+  children: ReactNode;
+  theme?: 'normal' | 'outlined'
 }
 
 export const Card: FC<CardProps> = (props) => {
-  const { className, children, ...otherProps } = props;
+  const {
+    className, children, theme = 'normal', ...otherProps
+  } = props;
 
   return (
     <div
-      className={classNames(cls.Card, {}, [className])}
+      className={classNames(cls.Card, {}, [className, cls[theme]])}
       {...otherProps}
     >
       {children}
