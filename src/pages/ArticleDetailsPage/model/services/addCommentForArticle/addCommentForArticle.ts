@@ -5,7 +5,7 @@ import { IComment } from 'entities/Comment';
 import { getArticleDetailsData } from 'entities/Article';
 import {
   fetchCommentsByArticleId,
-} from '../fetchCommentsByArticleId';
+} from '../fetchCommentsByArticleId/fetchCommentsByArticleId';
 
 export const addCommentForArticle = createAsyncThunk<
   IComment,
