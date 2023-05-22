@@ -41,7 +41,7 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'jsx-a11y/no-static-element-interactions': 'warn',
     'max-len': ['warn', { code: 140 }],
-    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'size', 'theme', 'align'] }],
+    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'size', 'theme', 'align', 'target'] }],
     'jsx-a11y/click-events-have-key-events': 'off', // this is good rule, but it's pet project not for this
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'error', // Checks effect

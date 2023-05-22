@@ -6,10 +6,6 @@ import { SortOrder } from 'shared/types';
 import { articlesPageActions } from '../../slices/articlesPageSlice';
 import { fetchArticlesPageList } from '../fetchArticlesPageList/fetchArticlesPageList';
 
-interface FetchNextArticlePageProps {
-  page?: number
-}
-
 export const initArticlesPage = createAsyncThunk<
   void,
   URLSearchParams,

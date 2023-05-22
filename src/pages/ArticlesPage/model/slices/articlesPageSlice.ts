@@ -22,9 +22,9 @@ const articlesPageSlice = createSlice({
   initialState: articlesAdapter.getInitialState<ArticlesPageSchema>({
     isLoading: false,
     error: undefined,
-    view: ArticleView.TILE,
     ids: [],
     entities: {},
+    view: ArticleView.TILE,
     page: 1,
     hasMore: true,
     _inited: false,
@@ -48,11 +48,11 @@ const articlesPageSlice = createSlice({
     setSort: (state, action: PayloadAction<ArticleSortField>) => {
       state.sort = action.payload;
     },
-    setSearch: (state, action: PayloadAction<string>) => {
-      state.search = action.payload;
-    },
     setType: (state, action: PayloadAction<ArticleType>) => {
       state.type = action.payload;
+    },
+    setSearch: (state, action: PayloadAction<string>) => {
+      state.search = action.payload;
     },
     initState: (state) => {
       const view = localStorage.getItem(ARTICLE_VIEW_LOCALSTORAGE_KEY) as ArticleView;
