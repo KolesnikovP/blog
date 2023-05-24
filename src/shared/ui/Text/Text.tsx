@@ -6,7 +6,7 @@ interface TextProps {
   className?: string;
   title?: string | number;
   text?: string | number;
-  theme?: 'primary' | 'error';
+  theme?: 'primary' | 'inverted' |'error';
   align?: 'right' | 'left' | 'center';
   size?: 'size_m' | 'size_l';
 }
@@ -18,6 +18,7 @@ export const Text = memo((props: TextProps) => {
 
   const mods: Mods = {
     [cls.error]: theme === 'error',
+    [cls.error]: theme === 'primary',
     [cls.textSizeM]: size === 'size_m',
     [cls.textSizeL]: size === 'size_l',
   };
