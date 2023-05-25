@@ -5,6 +5,9 @@ import Button, { ButtonTheme } from 'shared/ui/Button/ui/Button';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
+import { Text } from 'shared/ui/Text/Text';
+import AppLink, { AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -33,6 +36,19 @@ const Navbar = memo(({ className }: NavbarProps) => {
   if (userAuthData) {
     return (
       <header className={classNames(cls.Navbar)}>
+        <Text
+          className={cls.appName}
+          title={t('Some APP')}
+          theme='inverted'
+        />
+        <AppLink
+          to={RoutePath.article_create}
+          theme={AppLinkTheme.SECONDARY}
+          className={cls.createBtn}
+        >
+          {t('Создать статью')}
+        </AppLink>
+
         <Button
           theme={ButtonTheme.CLEAR_INVERTED}
           className={cls.links}
