@@ -17,6 +17,9 @@ import { Page } from 'widgets/Page/Page';
 import {
   addCommentForArticle,
 } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
+import {
+  ArticlesDetailsPageHeader,
+} from 'pages/ArticleDetailsPage/ui/ArticlesDetailsPageHeader/ArticlesDetailsPageHeader';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
 import {
@@ -53,12 +56,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const recommendations = useSelector(getArticleRecommendations.selectAll);
   const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
 
-  const navigate = useNavigate();
-
-  const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles);
-  }, [navigate]);
-
   const onSendComment = useCallback((text: string) => {
     dispatch(addCommentForArticle(text));
   }, [dispatch]);
@@ -79,12 +76,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducerList} removeAfterUnmount>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <Button
-          theme={ButtonTheme.OUTLINE}
-          onClick={onBackToList}
-        >
-          {t('Назад к списку')}
-        </Button>
+        <ArticlesDetailsPageHeader />
         <ArticleDetails id={id} />
         <Text
           size='size_l'
