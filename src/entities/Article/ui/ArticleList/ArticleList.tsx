@@ -3,6 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
 import { Text } from 'shared/ui/Text/Text';
+import { Virtuoso } from 'react-virtuoso';
 import { Article, ArticleView } from '../../model/types/article';
 import cls from './ArticleList.module.scss';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -13,6 +14,7 @@ interface ArticleListProps {
   isLoading?: boolean;
   view?: ArticleView;
   target?: HTMLAttributeAnchorTarget;
+  onLoadNextPart?: () => void;
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.TILE ? 9 : 3)
@@ -23,7 +25,7 @@ const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.TILE 
 
 export const ArticleList = memo((props: ArticleListProps) => {
   const {
-    className, articles, isLoading, target, view = ArticleView.TILE,
+    className, articles, isLoading, target, onLoadNextPart, view = ArticleView.TILE,
   } = props;
   const { t } = useTranslation();
 
@@ -46,6 +48,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
   }
 
   return (
+    // {
+    //   view === ArticleView.TILE && <div>dfa</div>
+    // }
     <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
       {articles.length > 0
         ? articles.map(renderArticle)
