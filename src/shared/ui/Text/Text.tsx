@@ -18,7 +18,7 @@ export const Text = memo((props: TextProps) => {
 
   const mods: Mods = {
     [cls.error]: theme === 'error',
-    [cls.error]: theme === 'primary',
+    [cls.theme]: theme === 'primary',
     [cls.textSizeM]: size === 'size_m',
     [cls.textSizeL]: size === 'size_l',
   };

@@ -22,7 +22,6 @@ export const fetchNextArticlePage = createAsyncThunk<
     const { getState, dispatch } = thunkAPI;
     const hasMore = getArticlesPageHasMore(getState());
     const page = getArticlesPageNum(getState());
-    const limit = getArticlesPageLimit(getState());
     const isLoading = getArticlesPageIsLoading(getState());
 
     if (hasMore && !isLoading) {
