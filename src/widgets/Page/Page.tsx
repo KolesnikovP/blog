@@ -31,15 +31,16 @@ export const Page = memo((props: PageProps) => {
     dispatch(scrollSaveActions.setScrollPosition({ path: pathname, position: e.currentTarget.scrollTop }));
   }, 500);
 
-  useInitialEffect(() => {
-    wrapperRef.current.scrollTop = scrollPosition;
-  });
-
   useInfinityScroll({
     triggerRef,
     wrapperRef,
     callback: onScrollEnd,
   });
+
+  useInitialEffect(() => {
+    wrapperRef.current.scrollTop = scrollPosition;
+  });
+
   // triggerRef - вешаем на элемент который не будет виден пользователю, но когда он будет во
   // вью порте, мы его будем тригерить
   return (
