@@ -1,8 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import {
   articleDetailsPageRecommendationsReducer,
-} from 'pages/ArticleDetailsPage/model/slices/articleDetailsPageRecommendationsSlice';
-import { articleDetailsCommentReducer } from 'pages/ArticleDetailsPage/model/slices/articleDetailsCommentsSlice';
+} from '../../model/slices/articleDetailsPageRecommendationsSlice';
+import { articleDetailsCommentReducer } from '../../model/slices/articleDetailsCommentsSlice';
 import { ArticleDetailsPageSchema } from '../types';
 
 // По аналогии с схемами чтобы не плодить, вынесем редюсеры одного модуля в единый объект

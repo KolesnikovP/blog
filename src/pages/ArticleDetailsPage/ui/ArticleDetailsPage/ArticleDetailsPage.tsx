@@ -12,11 +12,11 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/AddNewCommentForm';
 import { Page } from 'widgets/Page/Page';
 import {
-  addCommentForArticle,
-} from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
-import {
   ArticlesDetailsPageHeader,
-} from 'pages/ArticleDetailsPage/ui/ArticlesDetailsPageHeader/ArticlesDetailsPageHeader';
+} from '../../ui/ArticlesDetailsPageHeader/ArticlesDetailsPageHeader';
+import {
+  addCommentForArticle,
+} from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
 import {

@@ -4,13 +4,13 @@ import {
 } from '@reduxjs/toolkit';
 import { IComment } from 'entities/Comment';
 import { StateSchema } from 'app/providers/StoreProvider';
-import {
-  fetchCommentsByArticleId,
-} from 'pages/ArticleDetailsPage/model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { Article } from 'entities/Article';
 import {
+  fetchCommentsByArticleId,
+} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import {
   fetchArticleRecommendations,
-} from 'pages/ArticleDetailsPage/model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+} from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import {
   ArticleDetailsPageRecommendationsSchema,
 } from '../../model/types/ArticleDetailsPageRecommendationsSchema';
