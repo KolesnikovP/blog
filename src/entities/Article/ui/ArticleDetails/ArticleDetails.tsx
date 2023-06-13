@@ -11,6 +11,7 @@ import EyeIcon from 'shared/assets/icons/EyeIcon.svg';
 import CalendarIcon from 'shared/assets/icons/CalendarIcon.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
@@ -78,24 +79,27 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   } else {
     content = (
       <>
-        <div className={cls.avatarWrapper}>
+        <HStack justify='center' max className={cls.avatarWrapper}>
           <Avatar size={200} src={article?.img} className={cls.avatar} />
-        </div>
-        <Text
-          className={cls.title}
-          title={article?.title}
-          text={article?.subtitle}
-          size='size_l'
-        />
+        </HStack>
+        <VStack gap='4' max>
+          <Text
+            className={cls.title}
+            title={article?.title}
+            text={article?.subtitle}
+            size='size_l'
+          />
 
-        <div className={cls.articleInfo}>
-          <Icon Svg={EyeIcon} className={cls.icon} />
-          <Text text={article?.views} />
-        </div>
-        <div className={cls.articleInfo}>
-          <Icon Svg={CalendarIcon} className={cls.icon} />
-          <Text text={article?.createdAt} />
-        </div>
+          <HStack gap='8' className={cls.articleInfo}>
+            <Icon Svg={EyeIcon} className={cls.icon} />
+            <Text text={article?.views} />
+          </HStack>
+          <HStack gap='8' className={cls.articleInfo}>
+            <Icon Svg={CalendarIcon} className={cls.icon} />
+            <Text text={article?.createdAt} />
+          </HStack>
+
+        </VStack>
         {article?.blocks.map(renderBlock)}
       </>
     );
@@ -103,9 +107,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
-      <div className={classNames(cls.ArticleDetails, {}, [className])}>
+      <VStack gap='16' className={classNames(cls.ArticleDetails, {}, [className])}>
         {content}
-      </div>
+      </VStack>
     </DynamicModuleLoader>
   );
 });

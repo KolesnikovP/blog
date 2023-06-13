@@ -11,6 +11,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/AddNewCommentForm';
 import { Page } from 'widgets/Page/Page';
+import { VStack } from 'shared/ui/Stack';
 import {
   ArticlesDetailsPageHeader,
 } from '../../ui/ArticlesDetailsPageHeader/ArticlesDetailsPageHeader';
@@ -73,29 +74,31 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducerList} removeAfterUnmount>
       <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-        <ArticlesDetailsPageHeader />
-        <ArticleDetails id={id} />
-        <Text
-          size='size_l'
-          title={t('Рекомендации')}
-          className={cls.commentTitle}
-        />
-        <ArticleList
-          className={cls.recommendations}
-          articles={recommendations}
-          isLoading={recommendationsIsLoading}
-          target='_blank'
-        />
-        <Text
-          size='size_l'
-          title={t('Комментарии')}
-          className={cls.commentTitle}
-        />
-        <AddCommentForm onSendComment={onSendComment} />
-        <CommentList
-          isLoading={commentsIsLoading}
-          comments={comments}
-        />
+        <VStack gap='16' max>
+          <ArticlesDetailsPageHeader />
+          <ArticleDetails id={id} />
+          <Text
+            size='size_l'
+            title={t('Рекомендации')}
+            className={cls.commentTitle}
+          />
+          <ArticleList
+            className={cls.recommendations}
+            articles={recommendations}
+            isLoading={recommendationsIsLoading}
+            target='_blank'
+          />
+          <Text
+            size='size_l'
+            title={t('Комментарии')}
+            className={cls.commentTitle}
+          />
+          <AddCommentForm onSendComment={onSendComment} />
+          <CommentList
+            isLoading={commentsIsLoading}
+            comments={comments}
+          />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );
