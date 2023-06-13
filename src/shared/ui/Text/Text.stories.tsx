@@ -81,11 +81,17 @@ AlignRight.args = {
   align: 'right',
 };
 
+export const SizeS = Template.bind({});
+SizeS.args = {
+  title: 'Title',
+  text: 'Text',
+  size: 'size_s',
+};
+
 export const SizeM = Template.bind({});
 SizeM.args = {
   title: 'Title',
   text: 'Text',
-  align: 'right',
   size: 'size_m',
 };
 
@@ -93,6 +99,5 @@ export const SizeL = Template.bind({});
 SizeL.args = {
   title: 'Title',
   text: 'Text',
-  align: 'right',
   size: 'size_l',
 };

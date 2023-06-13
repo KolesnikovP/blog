@@ -44,13 +44,13 @@ export const Page = memo((props: PageProps) => {
   // triggerRef - вешаем на элемент который не будет виден пользователю, но когда он будет во
   // вью порте, мы его будем тригерить
   return (
-    <section
+    <main
       ref={wrapperRef}
       className={classNames(cls.Page, {}, [className])}
       onScroll={onScroll}
     >
       {children}
       {onScrollEnd ? <div ref={triggerRef} className={cls.trigger} /> : null}
-    </section>
+    </main>
   );
 });
