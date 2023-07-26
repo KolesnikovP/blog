@@ -2,8 +2,6 @@ import React, {
   memo, Suspense, useCallback, useMemo,
 } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { MainPage } from 'pages/MainPage';
-import { AboutPage } from 'pages/AboutPage';
 import { AppRouteProps, routeConfig } from 'shared/config/routeConfig/routeConfig';
 import PageLoader from 'widgets/PageLoader/ui/PageLoader';
 import { useSelector } from 'react-redux';
@@ -25,7 +23,7 @@ const AppRouter = () => {
       <Route
         key={route.path}
         path={route.path}
-        element={route.authOnly ? <RequireAuth>{element}</RequireAuth> : element}
+        element={route.authOnly ? <RequireAuth roles={route.roles}>{element}</RequireAuth> : element}
       />
     );
   }, []);
