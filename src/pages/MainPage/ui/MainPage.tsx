@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BugButton } from 'app/providers/ErrorBoundary';
-import { Counter } from 'entities/Counter';
 import { Page } from 'widgets/Page/Page';
 import { HStack } from 'shared/ui/Stack';
 import { ListBox } from 'shared/ui/ListBox/ListBox';
@@ -13,7 +12,6 @@ const MainPage = memo(() => {
     <Page>
       {t('главная страница')}
       <BugButton />
-      <Counter />
       <HStack>
         <ListBox
           onChange={(value: string) => 'string'}
