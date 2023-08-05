@@ -1,5 +1,5 @@
-import webpack, { RuleSetRule } from 'webpack';
 import path from 'path';
+import webpack, { RuleSetRule } from 'webpack';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 import { BuildPaths } from '../build/types/config';
 
@@ -36,7 +36,7 @@ export default ({ config }: {config: webpack.Configuration}) => {
 
   config.plugins!.push(new webpack.DefinePlugin({
     __IS_DEV__: true,
-    __API__: JSON.stringify(''),
+    __API__: JSON.stringify('http://testapi.com'),
     __PROJECT__: JSON.stringify('storybook'),
   }));
 
