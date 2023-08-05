@@ -8,7 +8,7 @@ import { getUserInited, userActions } from 'entities/User';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 
-export const App = () => {
+const App = () => {
   const { theme } = useTheme();
   const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);
@@ -30,3 +30,5 @@ export const App = () => {
     </div>
   );
 };
+
+export default App;

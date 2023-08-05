@@ -730,6 +730,12 @@
       "userId": "1",
       "text": "fdsafdsa",
       "id": "so5cCtD"
+    },
+    {
+      "articleId": "10",
+      "userId": "2",
+      "text": "fasdfdsa",
+      "id": "BKw9LIZ"
     }
   ],
   "users": [
@@ -737,21 +743,27 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://images.immediate.co.uk/production/volatile/sites/3/2022/04/Screenshot-2022-05-10-at-11.13.42-b2ecc46-e1663927354655.png"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://i.pinimg.com/originals/c8/4d/09/c84d0972424df1f6d9b85d234bb4e96a.jpg"
     },
     {
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": ["MANAGER"],
+      "roles": [
+        "MANAGER"
+      ],
       "avatar": "https://i.pinimg.com/originals/c8/4d/09/c84d0972424df1f6d9b85d234bb4e96a.jpg"
     }
   ],
