@@ -1,6 +1,6 @@
 import { Profile } from './model/types/profile';
 
-export { Profile };
+export type { Profile };
 
 /*
 * Вариант отличный от формы авторизации, там акшны и редюсеры были сосредоточены внутри
