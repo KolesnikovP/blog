@@ -1,4 +1,5 @@
 import React, { memo, useCallback } from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
@@ -33,6 +34,7 @@ export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
   return (
     <div>
       <Dropdown
+        className={classNames('', {}, [className])}
         direction='bottom left'
         items={[
           ...(isAdminPanelAvailable ? [{
