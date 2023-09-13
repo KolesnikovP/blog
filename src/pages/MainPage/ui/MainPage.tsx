@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { BugButton } from 'app/providers/ErrorBoundary';
 import { Page } from 'widgets/Page/Page';
 import { HStack } from 'shared/ui/Stack';
-import { ListBox } from 'shared/ui/ListBox/ListBox';
+import { ListBox } from 'shared/ui/Popups/ui/ListBox/ListBox';
 
 const MainPage = memo(() => {
   const { t } = useTranslation('main');
