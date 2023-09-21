@@ -4,10 +4,6 @@ import { Card } from 'shared/ui/Card/Card';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import cls from './ArticleListItem.module.scss';
-import {
-  Article, ArticleTextBlock,
-} from '../../model/types/article';
-import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 interface ArticleListItemSkeletonProps {
   className?: string;
