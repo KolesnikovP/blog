@@ -1,7 +1,7 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useEffect, useState } from 'react';
-import Button from 'shared/ui/Button/ui/Button';
 import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import Button from '@/shared/ui/Button/ui/Button';
 
 // Only for tests of ErrorBoundary
 const BugButton = () => {

@@ -9,7 +9,7 @@
     // для абсолютных путей
     "baseUrl": ".", // base directory to resolve non-absolute module names.
     "paths": {
-      "*": ["./src/*"] // all exports and imports will begin from src folder
+      "@/*": ["./src/*"] // all exports and imports will begin from src folder
     },
     "allowJs": true, // allow javascript files to be compiled.
     "moduleResolution": "node", // specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6).
