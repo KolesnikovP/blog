@@ -4,4 +4,4 @@ export { getProfileData } from './model/selectors/getProfileData/getProfileData'
 export { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly';
 export { profileActions } from './model/slice/profileSlice';
 export { updateProfileData } from './model/services/updateProfileData/updateProfileData';
-export { ValidateProfileError } from 'features/editableProfileCard/model/consts/consts';
+export { ValidateProfileError } from '@/features/editableProfileCard/model/consts/consts';
