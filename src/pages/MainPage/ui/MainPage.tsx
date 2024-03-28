@@ -4,6 +4,7 @@ import { BugButton } from '@/app/providers/ErrorBoundary';
 import { Page } from '@/widgets/Page/Page';
 import { HStack } from '@/shared/ui/Stack';
 import { ListBox } from '@/shared/ui/Popups/ui/ListBox/ListBox';
+import {StarRating} from '@/shared/ui/StarRating/StarRating';
 
 const MainPage = memo(() => {
   const { t } = useTranslation('main');
@@ -11,6 +12,7 @@ const MainPage = memo(() => {
   return (
     <Page>
       {t('главная страница')}
+      <StarRating/>
       <BugButton />
       <HStack>
         <ListBox
