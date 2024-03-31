@@ -5,6 +5,7 @@ import { Page } from '@/widgets/Page/Page';
 import { HStack } from '@/shared/ui/Stack';
 import { ListBox } from '@/shared/ui/Popups/ui/ListBox/ListBox';
 import {StarRating} from '@/shared/ui/StarRating/StarRating';
+import {RatingCard} from '@/entities/Rating/ui/RatingCard/RatingCard';
 
 const MainPage = memo(() => {
   const { t } = useTranslation('main');
@@ -13,6 +14,11 @@ const MainPage = memo(() => {
     <Page>
       {t('главная страница')}
       <StarRating/>
+      <RatingCard
+        title={'Как вам статья'}
+        feedbackTitle={'Оставьте отзыв о статье'}
+        hasFeedback
+      />
       <BugButton />
       <HStack>
         <ListBox

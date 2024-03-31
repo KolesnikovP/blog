@@ -20,6 +20,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     square?: boolean;
     size?: 'size_m' | 'size_l' | 'size_xl';
     disabled?: boolean;
+    fullWidth?: boolean;
 }
 
 // ДА, мы не оборачиваем компоненты в мемо, НО! Это кнопка, там обычно хронятся примитивы
@@ -32,12 +33,14 @@ const Button = memo((props: ButtonProps) => {
     square,
     size = 'size_l',
     disabled,
+    fullWidth,
     ...otherProps
   } = props;
 
   const mods: Mods = {
     [cls.square]: square,
     [cls.disabled]: disabled,
+    [cls.fullWidth]: fullWidth,
   };
 
   return (
