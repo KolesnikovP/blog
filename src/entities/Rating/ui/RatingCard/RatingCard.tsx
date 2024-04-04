@@ -20,14 +20,23 @@ interface RatingCardProps {
   hasFeedback?: boolean;
   onCancel?: (starsCount: number) => void;
   onAccept?: (starsCount: number, feedback?: string) => void;
+  rate?: number;
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
-  const {className, onCancel, onAccept, hasFeedback, feedbackTitle, title} = props;
+  const {
+    className,
+    onCancel,
+    onAccept,
+    hasFeedback,
+    feedbackTitle,
+    title,
+    rate,
+  } = props;
   const {t} = useTranslation();
 
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [starsCount, setStarsCount] = useState(0)
+  const [starsCount, setStarsCount] = useState(rate || 0)
   const [feedback, setFeedback] = useState('')
 
   const onSelectStars = useCallback((selectedStarsCount: number) => {
