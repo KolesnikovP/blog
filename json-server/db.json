@@ -818,5 +818,72 @@
       "username": "user",
       "avatar": "https://i.pinimg.com/originals/c8/4d/09/c84d0972424df1f6d9b85d234bb4e96a.jpg"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": 1,
+      "rate": 5,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": 2,
+      "rate": 3,
+      "feedback": "так себе статья",
+      "userId": "2",
+      "articleId": "2"
+    },
+    {
+      "id": 3,
+      "rate": 4,
+      "feedback": "Норм статья",
+      "userId": "3",
+      "articleId": "3"
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "rate": 3,
+      "feedback": "",
+      "id": 4
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 4,
+      "feedback": "fgdsfgdsgdsgdfshdsjhdsgjdsjfh",
+      "id": 5
+    },
+    {
+      "userId": "1",
+      "articleId": "2",
+      "rate": 4,
+      "feedback": "заебись",
+      "id": 6
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": 1,
+      "rate": 5,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": 2,
+      "rate": 3,
+      "feedback": "так себе статья",
+      "userId": "2",
+      "profileId": "2"
+    },
+    {
+      "id": 3,
+      "rate": 4,
+      "feedback": "Норм статья",
+      "userId": "3",
+      "articleId": "3"
+    }
   ]
 }
