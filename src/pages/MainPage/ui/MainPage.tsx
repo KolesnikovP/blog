@@ -4,8 +4,8 @@ import { BugButton } from '@/app/providers/ErrorBoundary';
 import { Page } from '@/widgets/Page/Page';
 import { HStack } from '@/shared/ui/Stack';
 import { ListBox } from '@/shared/ui/Popups/ui/ListBox/ListBox';
-import {StarRating} from '@/shared/ui/StarRating/StarRating';
-import {RatingCard} from '@/entities/Rating/ui/RatingCard/RatingCard';
+import { StarRating } from '@/shared/ui/StarRating/StarRating';
+import { RatingCard } from '@/entities/Rating/ui/RatingCard/RatingCard';
 
 const MainPage = memo(() => {
   const { t } = useTranslation('main');
@@ -13,10 +13,10 @@ const MainPage = memo(() => {
   return (
     <Page>
       {t('главная страница')}
-      <StarRating/>
+      <StarRating />
       <RatingCard
-        title={'Как вам статья'}
-        feedbackTitle={'Оставьте отзыв о статье'}
+        title={t('Как вам статья')}
+        feedbackTitle={t('Оставьте отзыв о статье')}
         hasFeedback
       />
       <BugButton />

@@ -21,7 +21,6 @@ Normal.args = {
   item: {
     id: '1',
     title: 'Title',
-    description: 'Description'
-  }
+    description: 'Description',
+  },
 };
-

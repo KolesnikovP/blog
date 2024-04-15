@@ -1,15 +1,13 @@
-import {FC, lazy, Suspense} from 'react';
-import {ArticleRatingProps} from './ArticleRating';
-import {Skeleton} from '@/shared/ui/Skeleton/Skeleton';
+import { FC, lazy, Suspense } from 'react';
+import { ArticleRatingProps } from './ArticleRating';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 
 const ArticleRatingLazy = lazy(
-  () => import('./ArticleRating')
-)
+  () => import('./ArticleRating'),
+);
 
-export const ArticleRatingAsync = (props: ArticleRatingProps) => {
-  return (
-    <Suspense fallback={<Skeleton width={'100%'} height={140}/>}>
-      <ArticleRatingLazy {...props}/>
-    </Suspense>
-  )
-}
+export const ArticleRatingAsync = (props: ArticleRatingProps) => (
+  <Suspense fallback={<Skeleton width='100%' height={140} />}>
+    <ArticleRatingLazy {...props} />
+  </Suspense>
+);

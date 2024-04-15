@@ -1,10 +1,10 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { NotificationList } from './NotificationList';
-import {StoreDecorator} from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import withMock from 'storybook-addon-mock';
-import {WithoutRate} from '@/features/articleRating/ui/ArticleRating/ArticleRating.stories';
+import { NotificationList } from './NotificationList';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { WithoutRate } from '@/features/articleRating/ui/ArticleRating/ArticleRating.stories';
 
 export default {
   title: 'entities/Notification/NotificationList',
@@ -15,7 +15,7 @@ export default {
   args: {
     to: '/',
   },
-  decorators: [withMock]
+  decorators: [withMock],
 } as ComponentMeta<typeof NotificationList>;
 
 const Template: ComponentStory<typeof NotificationList> = (args) => <NotificationList {...args} />;
@@ -27,9 +27,9 @@ Normal.decorators = [StoreDecorator({
     authData: {
       id: '1',
       username: '113',
-    }
-  }
-})]
+    },
+  },
+})];
 Normal.parameters = {
   mockData: [
     {
@@ -40,12 +40,12 @@ Normal.parameters = {
         {
           id: '1',
           title: 'Notification',
-          description: 'Description'
+          description: 'Description',
         },
         {
           id: '2',
           title: 'Notification 2',
-          description: 'Description 2'
+          description: 'Description 2',
         },
       ],
     },
