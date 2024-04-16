@@ -4,7 +4,7 @@ import React, {
 import { Route, Routes } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { AppRouteProps, routeConfig } from '@/shared/config/routeConfig/routeConfig';
-import PageLoader from '@/widgets/PageLoader/ui/PageLoader';
+import { PageLoader } from '@/widgets/PageLoader';
 import { getUserAuthData } from '@/entities/User';
 import { RequireAuth } from '@/app/providers/router/ui/RequireAuth';
 

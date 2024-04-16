@@ -1,11 +1,11 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BugButton } from '@/app/providers/ErrorBoundary';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page';
 import { HStack } from '@/shared/ui/Stack';
 import { ListBox } from '@/shared/ui/Popups/ui/ListBox/ListBox';
 import { StarRating } from '@/shared/ui/StarRating/StarRating';
-import { RatingCard } from '@/entities/Rating/ui/RatingCard/RatingCard';
+import { RatingCard } from '@/entities/Rating';
 
 const MainPage = memo(() => {
   const { t } = useTranslation('main');

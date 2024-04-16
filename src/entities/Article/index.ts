@@ -15,3 +15,4 @@ export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
 export { ArticleView } from '@/entities/Article/model/consts/consts';
 export { ArticleType } from '@/entities/Article/model/consts/consts';
 export { ArticleSortField } from '@/entities/Article/model/consts/consts';
+export { ArticleBlockType } from './model/consts/consts';

@@ -5,11 +5,11 @@ import { Button } from '@/shared/ui/Button';
 import { ButtonTheme } from '@/shared/ui/Button/ui/Button';
 
 interface LangSwitcherProps {
-    className?: string;
-    short?: boolean;
+  className?: string;
+  short?: boolean;
 }
 
-const LangSwitcher = memo((props: LangSwitcherProps) => {
+export const LangSwitcher = memo((props: LangSwitcherProps) => {
   const { className, short } = props;
 
   const { t, i18n } = useTranslation();
@@ -28,5 +28,3 @@ const LangSwitcher = memo((props: LangSwitcherProps) => {
     </Button>
   );
 });
-
-export default LangSwitcher;
