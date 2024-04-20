@@ -68,7 +68,11 @@ module.exports = {
     // I know when I can use key as index and when I can't
     'react/no-array-index-key': 'off',
     'kolesnikov-plugin/path-checker': ['error', { alias: '@' }],
-    'kolesnikov-plugin/public-api-imports': ['error', { alias: '@' }],
+    'kolesnikov-plugin/public-api-imports': ['error', {
+      alias: '@',
+      testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+    },
+    ],
   },
   globals: {
     __IS_DEV__: true,

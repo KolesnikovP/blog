@@ -2,17 +2,12 @@ import { Story } from '@storybook/react';
 import { StateSchema } from '@/app/providers/StoreProvider';
 // TODO
 import StoreProvider from '@/app/providers/StoreProvider/ui/StoreProvider';
-// eslint-disable-next-line kolesnikov-plugin/public-api-imports
-import { loginReducer } from '@/features/AuthByUsername/model/slice/loginSlice';
 import { ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-// eslint-disable-next-line kolesnikov-plugin/public-api-imports
-import { articleDetailsReducer } from '@/entities/Article/model/slice/articleDetailsSlice';
-// eslint-disable-next-line kolesnikov-plugin/public-api-imports
-import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/model/slices';
-// eslint-disable-next-line kolesnikov-plugin/public-api-imports
-import { addCommentFormReducer } from '@/features/addNewCommentForm/model/slices/addCommentFormSlice';
-// eslint-disable-next-line kolesnikov-plugin/public-api-imports
-import { profileReducer } from '@/features/editableProfileCard/model/slice/profileSlice';
+import { articleDetailsReducer } from '@/entities/Article/testing';
+import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
+import { addCommentFormReducer } from '@/features/addNewCommentForm/testing';
+import { profileReducer } from '@/features/editableProfileCard/testing';
+import { loginReducer } from '@/features/AuthByUsername/testing';
 
 const defaultAsyncReducers: ReducersList = {
   loginForm: loginReducer,
