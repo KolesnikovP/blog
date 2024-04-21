@@ -9,7 +9,7 @@ import { useHover } from '@/shared/lib/hooks/useHover/useHover';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Button } from '@/shared/ui/Button';
 import { ButtonTheme } from '@/shared/ui/Button/ui/Button';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/constRouter';
 import AppLink from '@/shared/ui/AppLink/AppLink';
 import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import cls from './ArticleListItem.module.scss';
