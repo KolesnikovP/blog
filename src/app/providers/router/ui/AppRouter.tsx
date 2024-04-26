@@ -3,11 +3,11 @@ import React, {
 } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { routeConfig } from '@/app/providers/router/config/routeConfig';
 import { AppRouteProps } from '@/shared/types/router';
 import { PageLoader } from '@/widgets/PageLoader';
 import { getUserAuthData } from '@/entities/User';
-import { RequireAuth } from '@/app/providers/router/ui/RequireAuth';
+import { routeConfig } from '../config/routeConfig';
+import { RequireAuth } from './RequireAuth';
 
 const AppRouter = () => {
   const isAuth = useSelector(getUserAuthData);
