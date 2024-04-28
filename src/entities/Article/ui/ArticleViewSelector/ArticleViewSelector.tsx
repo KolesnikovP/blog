@@ -3,9 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import TileIcon from '@/shared/assets/icons/TileIcon.svg';
 import ListIcon from '@/shared/assets/icons/ListIcon.svg';
-import { Button } from '@/shared/ui/Button';
-import { Icon } from '@/shared/ui/Icon/Icon';
-import { ButtonTheme } from '@/shared/ui/Button/ui/Button';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
 import { ArticleView } from '../../model/consts/consts';
 import cls from './ArticleViewSelector.module.scss';
 

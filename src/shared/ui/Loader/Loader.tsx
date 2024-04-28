@@ -6,7 +6,7 @@ interface LoaderProps {
   className?: string;
 }
 
-const Loader = memo((props: LoaderProps) => {
+export const Loader = memo((props: LoaderProps) => {
   const { className } = props;
 
   return (
@@ -18,5 +18,3 @@ const Loader = memo((props: LoaderProps) => {
     </div>
   );
 });
-
-export default Loader;

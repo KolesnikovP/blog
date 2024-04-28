@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import StarIcon from '@/shared/assets/icons/StarIcon.svg';
 import cls from './StarRating.module.scss';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Icon } from '@/shared/ui/Icon';
 
 interface StarRatingProps {
   className?: string;

@@ -15,7 +15,7 @@ interface AppLinkProps extends LinkProps {
 }
 
 // Тоже самое и с линкой. Она дешевая, как правило без объектов. Мемо тут гуд
-const AppLink = memo((props: AppLinkProps) => {
+export const AppLink = memo((props: AppLinkProps) => {
   const {
     className,
     children,
@@ -34,5 +34,3 @@ const AppLink = memo((props: AppLinkProps) => {
     </Link>
   );
 });
-
-export default AppLink;

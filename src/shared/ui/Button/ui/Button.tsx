@@ -25,7 +25,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 // ДА, мы не оборачиваем компоненты в мемо, НО! Это кнопка, там обычно хронятся примитивы
 // без древовидной вложенной структуры. Хранить такое дешево
-const Button = memo((props: ButtonProps) => {
+export const Button = memo((props: ButtonProps) => {
   const {
     className,
     theme = ButtonTheme.OUTLINE,
@@ -54,5 +54,3 @@ const Button = memo((props: ButtonProps) => {
     </button>
   );
 });
-
-export default Button;
