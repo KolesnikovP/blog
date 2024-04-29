@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { ArticleView } from '../../model/consts/consts';
 import { ArticleListItem } from './ArticleListItem';
+import { ArticleView } from '../../model/consts/consts';
 import { Article } from '../../model/types/article';
 
 const article = {

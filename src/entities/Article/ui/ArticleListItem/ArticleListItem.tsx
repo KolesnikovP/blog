@@ -1,17 +1,17 @@
-import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
+import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text';
-import { Icon } from '@/shared/ui/Icon';
 import EyeIcon from '@/shared/assets/icons/EyeIcon.svg';
-import { Card } from '@/shared/ui/Card';
+import { RoutePath } from '@/shared/const/constRouter';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useHover } from '@/shared/lib/hooks/useHover/useHover';
+import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { RoutePath } from '@/shared/const/constRouter';
-import { AppLink } from '@/shared/ui/AppLink';
-import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
+import { Card } from '@/shared/ui/Card';
+import { Icon } from '@/shared/ui/Icon';
+import { Text } from '@/shared/ui/Text';
 import cls from './ArticleListItem.module.scss';
+import { ArticleBlockType, ArticleView } from '../../model/consts/consts';
 import {
   Article, ArticleTextBlock,
 } from '../../model/types/article';

@@ -5,8 +5,8 @@ import {
 } from '@/entities/Article';
 import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localStorageConst';
 import { SortOrder } from '@/shared/types';
-import { ArticlesPageSchema } from '../types/articlesPageSchema';
 import { fetchArticlesPageList } from '../../model/services/fetchArticlesPageList/fetchArticlesPageList';
+import { ArticlesPageSchema } from '../types/articlesPageSchema';
 
 const articlesAdapter = createEntityAdapter<Article>({
   // Функция по которому будет идти нормализация

@@ -1,7 +1,7 @@
-import webpack from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { BuildOptions } from './types/config';
+import webpack from 'webpack';
 import { buildBabelLoader } from './loaders/buildBabelLoader';
+import { BuildOptions } from './types/config';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
   const { isDev } = options;

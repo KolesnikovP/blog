@@ -2,9 +2,9 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { ArticleDetails } from './ArticleDetails';
 import { ArticleType, ArticleBlockType } from '../../model/consts/consts';
 import { Article } from '../../model/types/article';
-import { ArticleDetails } from './ArticleDetails';
 
 const artcicleContent: Article = {
   id: '1',

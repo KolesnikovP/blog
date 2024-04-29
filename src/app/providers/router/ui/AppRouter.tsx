@@ -1,13 +1,13 @@
 import React, {
-  memo, Suspense, useCallback, useMemo,
+  memo, Suspense, useCallback,
 } from 'react';
-import { Route, Routes } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { Route, Routes } from 'react-router-dom';
+import { getUserAuthData } from '@/entities/User';
 import { AppRouteProps } from '@/shared/types/router';
 import { PageLoader } from '@/widgets/PageLoader';
-import { getUserAuthData } from '@/entities/User';
-import { routeConfig } from '../config/routeConfig';
 import { RequireAuth } from './RequireAuth';
+import { routeConfig } from '../config/routeConfig';
 
 const AppRouter = () => {
   const isAuth = useSelector(getUserAuthData);

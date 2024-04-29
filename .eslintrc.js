@@ -23,8 +23,11 @@ module.exports = {
     'i18next',
     'react-hooks',
     'kolesnikov-plugin',
+    'unused-imports',
+    'import',
   ],
   rules: {
+    'unused-imports/no-unused-imports': 'error',
     'react/jsx-indent': [0, { indentMode: 2, ignoreTernaryOperator: true }],
     indent: [2, 2],
     'no-unused-vars': 'warn',
@@ -80,6 +83,31 @@ module.exports = {
         ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
       },
     ],
+    'import/order': [
+      'error',
+      {
+        groups: ['builtin', 'external', 'internal'],
+        pathGroups: [
+          {
+            pattern: 'react',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '@/**',
+            group: 'external',
+            position: 'after',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['react'],
+        // 'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
+
   },
   globals: {
     __IS_DEV__: true,
