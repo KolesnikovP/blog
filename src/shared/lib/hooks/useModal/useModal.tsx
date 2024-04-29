@@ -8,6 +8,13 @@ interface UseModalProps {
   animationDelay: number
 }
 
+/**
+ * universal hook for modal components (drower/modal)
+ * @param animationDelay
+ * @param isOpen
+ * @param onClose
+ * @returns isClosing, isMounted, close
+ */
 export function useModal({
   onClose, animationDelay, isOpen,
 }: UseModalProps) {
