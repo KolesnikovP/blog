@@ -18,6 +18,7 @@ export default {
     '\\.(s?css)$': 'identity-obj-proxy',
     // mock for svg imports. Просто маппер который будет возвращать компонент. Саму свг тестировать не будем
     '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    '^@/(.*)$': '<rootDir>/src/$1',
   },
 
   // The glob patterns Jest uses to detect test files
