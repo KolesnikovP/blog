@@ -61,7 +61,6 @@ export const RatingCard = memo((props: RatingCardProps) => {
       <Text title={feedbackTitle} />
       <Input value={feedback} onChange={setFeedback} placeholder={t('Ваш отзыв')} />
     </>
-
   );
 
   return (
