@@ -7,6 +7,7 @@ interface BuildBabelLoaderProps extends BuildOptions {
 
 export function buildBabelLoader(options: BuildBabelLoaderProps) {
   const { isDev, isTsx } = options;
+  const isProd = !isDev;
   return {
     test: isTsx ? /\.(jsx|tsx)$/ : /\.(js|ts)/,
     exclude: /node_modules/,
@@ -20,7 +21,7 @@ export function buildBabelLoader(options: BuildBabelLoaderProps) {
               isTsx,
             }],
           '@babel/plugin-transform-runtime',
-          isTsx && [
+          isTsx && isProd && [
             babelRemovePropsPlugin,
             {
               props: ['data-testid'],
