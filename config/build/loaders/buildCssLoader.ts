@@ -6,6 +6,7 @@ export const buildCssLoader = (isDev: boolean) => ({
     isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
     {
       loader: 'css-loader',
+      exclude: /node_modules/,
       options: {
         modules: {
           auto: (resourcePath: string) => resourcePath.endsWith('.module.scss') || resourcePath.endsWith('.module.css'),
