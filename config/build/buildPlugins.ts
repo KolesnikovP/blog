@@ -11,11 +11,9 @@ import { BuildOptions } from './types/config';
 export function buildPlugins({
   paths, isDev, apiUrl, project,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
+  const isProd = !isDev;
   const plugins = [
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash].css',
-      chunkFilename: 'css/[name].[contenthash].css',
-    }),
+
     new HtmlWebpackPlugin({
       template: paths.html,
     }),
@@ -55,6 +53,15 @@ export function buildPlugins({
     plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
     plugins.push(new webpack.HotModuleReplacementPlugin());
     plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));
+  }
+
+  if (isProd) {
+    plugins.push(
+      new MiniCssExtractPlugin({
+        filename: 'css/[name].[contenthash].css',
+        chunkFilename: 'css/[name].[contenthash].css',
+      }),
+    );
   }
 
   return plugins;
