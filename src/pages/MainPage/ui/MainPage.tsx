@@ -1,17 +1,17 @@
-import React, { memo } from 'react';
-import { useTranslation } from 'react-i18next';
 import { BugButton } from '@/app/providers/ErrorBoundary';
 import { RatingCard } from '@/entities/Rating';
 import { ListBox } from '@/shared/ui/Popups';
 import { HStack } from '@/shared/ui/Stack';
 import { StarRating } from '@/shared/ui/StarRating';
 import { Page } from '@/widgets/Page';
+import { memo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const MainPage = memo(() => {
   const { t } = useTranslation('main');
 
   return (
-    <Page>
+    <Page data-testid='MainPage'>
       {t('главная страница')}
       <StarRating />
       <RatingCard

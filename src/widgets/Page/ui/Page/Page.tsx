@@ -1,8 +1,3 @@
-import {
-  memo, MutableRefObject, ReactNode, useRef, UIEvent,
-} from 'react';
-import { useSelector } from 'react-redux';
-import { useLocation } from 'react-router-dom';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { getScrollByPath, scrollSaveActions } from '@/features/ScrollSave';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -10,9 +5,17 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useInfinityScroll } from '@/shared/lib/hooks/useInfinityScroll/useInfinityScroll';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
+import { TestProps } from '@/shared/types/tests';
+import {
+  memo, MutableRefObject, ReactNode,
+  UIEvent,
+  useRef,
+} from 'react';
+import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import cls from './Page.module.scss';
 
-interface PageProps {
+interface PageProps extends TestProps {
   className?: string;
   children: ReactNode;
   onScrollEnd?: () => void;
@@ -48,6 +51,7 @@ export const Page = memo((props: PageProps) => {
       ref={wrapperRef}
       className={classNames(cls.Page, {}, [className])}
       onScroll={onScroll}
+      data-testid={props['data-testid'] ?? 'Page'}
     >
       {children}
       {onScrollEnd ? <div ref={triggerRef} className={cls.trigger} /> : null}
