@@ -29,7 +29,7 @@ module.exports = {
   rules: {
     'unused-imports/no-unused-imports': 'error',
     'react/jsx-indent': [0, { indentMode: 2, ignoreTernaryOperator: true }],
-    indent: [2, 2],
+    indent: [2, tab],
     'no-unused-vars': 'warn',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', 'tsx', 'ts'] }],
     'import/no-unresolved': 'off',
@@ -68,6 +68,7 @@ module.exports = {
     'no-param-reassign': 'off',
     'react/jsx-one-expression-per-line': 'off',
     'no-undef': 'off',
+    'prefer-arrow-callback': 'off',
     // I know when I can use key as index and when I can't
     'react/no-array-index-key': 'off',
     'kolesnikov-plugin/path-checker': ['error', { alias: '@' }],
