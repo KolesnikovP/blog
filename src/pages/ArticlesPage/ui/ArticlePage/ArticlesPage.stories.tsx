@@ -1,7 +1,9 @@
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from '@/shared/const/theme';
+// eslint-disable-next-line import/order
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+// eslint-disable-next-line import/order
 import withMock from 'storybook-addon-mock';
 import ArticlesPage from './ArticlesPage';
 
@@ -89,7 +91,7 @@ Dark.parameters = {
            { ...data, id: '1' },
            { ...data, id: '2' },
            { ...data, id: '3' },
-         ]
+         ],
     },
-  ]
+  ],
 };
