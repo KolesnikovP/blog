@@ -44,7 +44,7 @@ export function buildPlugins({
   ];
 
   if (isDev) {
-  // {overlay: false} - для того чтобы не было ошибке на скрине браузера
+    // {overlay: false} - для того чтобы не было ошибке на скрине браузера
     plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
     plugins.push(new webpack.HotModuleReplacementPlugin());
     plugins.push(new ReactRefreshWebpackPlugin({ overlay: false }));

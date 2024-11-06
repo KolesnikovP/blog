@@ -28,8 +28,9 @@ module.exports = {
   ],
   rules: {
     'unused-imports/no-unused-imports': 'error',
+    'no-tabs': 0,
     'react/jsx-indent': [0, { indentMode: 2, ignoreTernaryOperator: true }],
-    indent: [2, tab],
+    "indent": ["error", 2],
     'no-unused-vars': 'warn',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', 'tsx', 'ts'] }],
     'import/no-unresolved': 'off',

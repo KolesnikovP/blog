@@ -1,7 +1,9 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { User, userActions } from '@/entities/User';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localStorageConst';
+// TODO: to find a line with rule said to sort imports according to alphabet
+// eslint-disable-next-line import/order
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 interface LoginByUsernameProps {
     username: string;

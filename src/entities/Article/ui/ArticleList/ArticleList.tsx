@@ -48,9 +48,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
   }
 
   return (
-    // {
-    //   view === ArticleView.TILE && <div>dfa</div>
-    // }
+  // {
+  //   view === ArticleView.TILE && <div>dfa</div>
+  // }
     <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
       {articles.length > 0
         ? articles.map(renderArticle)
