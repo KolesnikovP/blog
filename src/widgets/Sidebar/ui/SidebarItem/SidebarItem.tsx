@@ -1,11 +1,15 @@
-import { memo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
-import cls from './SidebarItem.module.scss';
+import { AppLink } from '@/shared/ui/AppLink';
+// eslint-disable-next-line import/order
+import { memo } from 'react';
+// eslint-disable-next-line import/order
+import { useTranslation } from 'react-i18next';
+// eslint-disable-next-line import/order
+import { useSelector } from 'react-redux';
 import { SidebarItemType } from '../../model/types/sidebar';
+// eslint-disable-next-line import/order
+import cls from './SidebarItem.module.scss';
 
 interface SidebarProps {
   item: SidebarItemType;
@@ -24,7 +28,6 @@ export const SidebarItem = memo((props: SidebarProps) => {
 
   return (
     <AppLink
-      theme={AppLinkTheme.SECONDARY}
       to={item.path}
       className={classNames(cls.item, { [cls.collapsed]: collapsed }, [])}
     >
