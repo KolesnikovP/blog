@@ -1,17 +1,14 @@
-import { UserRole } from '../consts/consts';
+import { UserRole } from '../consts/userConsts';
 
 export interface User {
-  id: string;
-  username: string;
-  avatar?: string;
-  roles?: UserRole[]
+    id: string;
+    username: string;
+    avatar?: string;
+    roles?: UserRole[];
 }
 
 export interface UserSchema {
-  authData?: User
+    authData?: User;
 
-  // нужен чтобы убедиться что данные о пользователе инициализировались и мы можем опираясь на это строить свою логику
-  // Для примера, у нас может роутер инициализироваться раньше чем данные о пользователе и нас будет редиректить как не
-  // залогиненого пользака
-  _inited: boolean;
+    _inited: boolean;
 }

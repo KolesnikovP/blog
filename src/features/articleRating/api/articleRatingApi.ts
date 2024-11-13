@@ -1,39 +1,37 @@
-import { Rating } from '@/entities/Rating';
 import { rtkApi } from '@/shared/api/rtkApi';
+import { Rating } from '@/entities/Rating';
 
-interface GetArticleRating {
-  userId: string;
-  articleId: string;
+interface GetArticleRatingArg {
+    userId: string;
+    articleId: string;
 }
 
-interface RateArticleRating {
-  userId: string;
-  articleId: string;
-  rate: number;
-  feedback?: string;
+interface RateArticleArg {
+    userId: string;
+    articleId: string;
+    rate: number;
+    feedback?: string;
 }
 
 const articleRatingApi = rtkApi.injectEndpoints({
-  endpoints: (build) => ({
-    // Для запросов используем query, для изменения и создания данных mutation
-    getArticleRating: build.query<Rating[], GetArticleRating>({
-      query: ({ articleId, userId }) => ({
-        url: '/article-ratings',
-        params: {
-          userId,
-          articleId,
-        },
-      }),
+    endpoints: (build) => ({
+        getArticleRating: build.query<Rating[], GetArticleRatingArg>({
+            query: ({ articleId, userId }) => ({
+                url: '/article-ratings',
+                params: {
+                    userId,
+                    articleId,
+                },
+            }),
+        }),
+        rateArticle: build.mutation<void, RateArticleArg>({
+            query: (arg) => ({
+                url: '/article-ratings',
+                method: 'POST',
+                body: arg,
+            }),
+        }),
     }),
-
-    rateArticle: build.mutation<void, RateArticleRating>({
-      query: (arg) => ({
-        url: '/article-ratings',
-        method: 'POST',
-        body: arg,
-      }),
-    }),
-  }),
 });
 
 export const useGetArticleRating = articleRatingApi.useGetArticleRatingQuery;

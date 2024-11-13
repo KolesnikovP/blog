@@ -1,65 +1,70 @@
 import { screen } from '@testing-library/react';
-import { UserRole } from '@/entities/User';
-import { getRouteAdmin, getRouteProfile } from '@/shared/const/constRouter';
-import { ComponentRender } from '@/shared/lib/tests/componentRender/ComponentRender';
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 import AppRouter from './AppRouter';
+import { getRouteAbout, getRouteAdmin, getRouteProfile } from '@/shared/const/router';
+import { UserRole } from '@/entities/User';
 
 describe('app/router/AppRouter', () => {
-  // test('A page should be rendered', async () => {
-  // 	ComponentRender(<AppRouter/>, {
-  // 		route: getRouteAbout(),
-  // 	});
-  // 	// ! findeByTestId - for async components
-  // 	const page = await screen.findByTestId('AboutPage')
-  // 	expect(page).toBeInTheDocument();
-  // });
+    test('Страница должна отрендериться', async () => {
+        componentRender(<AppRouter />, {
+            route: getRouteAbout(),
+        });
 
-  test('A page not found', async () => {
-    ComponentRender(<AppRouter />, {
-      route: '/fdsafg',
+        const page = await screen.findByTestId('AboutPage');
+        expect(page).toBeInTheDocument();
     });
-    const page = await screen.findByTestId('NotFoundPage');
-    expect(page).toBeInTheDocument();
-  });
 
-  test('redirecting of an unauthorized user at the main page', async () => {
-    ComponentRender(<AppRouter />, {
-      route: getRouteProfile('1'),
-    });
-    const page = await screen.findByTestId('MainPage');
-    expect(page).toBeInTheDocument();
-  });
+    test('Страница не найдена', async () => {
+        componentRender(<AppRouter />, {
+            route: '/asfasfasfasf',
+        });
 
-  test('an access is allowed to a hidden page for authorized user', async () => {
-    ComponentRender(<AppRouter />, {
-      route: getRouteProfile('1'),
-      initialState: {
-        user: { _inited: true, authData: {} },
-      },
+        const page = await screen.findByTestId('NotFoundPage');
+        expect(page).toBeInTheDocument();
     });
-    const page = await screen.findByTestId('ProfilePage');
-    expect(page).toBeInTheDocument();
-  });
 
-  test('when user doesn\'t have a role', async () => {
-    ComponentRender(<AppRouter />, {
-      route: getRouteAdmin(),
-      initialState: {
-        user: { _inited: true, authData: {} },
-      },
-    });
-    const page = await screen.findByTestId('ForbiddenPage');
-    expect(page).toBeInTheDocument();
-  });
+    test('Редирект неавторизованного пользователя на главную', async () => {
+        componentRender(<AppRouter />, {
+            route: getRouteProfile('1'),
+        });
 
-  test('when user has a role', async () => {
-    ComponentRender(<AppRouter />, {
-      route: getRouteAdmin(),
-      initialState: {
-        user: { _inited: true, authData: { roles: [UserRole.ADMIN] } },
-      },
+        const page = await screen.findByTestId('MainPage');
+        expect(page).toBeInTheDocument();
     });
-    const page = await screen.findByTestId('AdminPanelPage');
-    expect(page).toBeInTheDocument();
-  });
+
+    test('Доступ к закрытой страницы для авторизованного пользователя', async () => {
+        componentRender(<AppRouter />, {
+            route: getRouteProfile('1'),
+            initialState: {
+                user: { _inited: true, authData: {} },
+            },
+        });
+
+        const page = await screen.findByTestId('ProfilePage');
+        expect(page).toBeInTheDocument();
+    });
+
+    test('Доступ запрещен (отсутствует роль)', async () => {
+        componentRender(<AppRouter />, {
+            route: getRouteAdmin(),
+            initialState: {
+                user: { _inited: true, authData: {} },
+            },
+        });
+
+        const page = await screen.findByTestId('ForbiddenPage');
+        expect(page).toBeInTheDocument();
+    });
+
+    test('Доступ разрешен (присутствует роль)', async () => {
+        componentRender(<AppRouter />, {
+            route: getRouteAdmin(),
+            initialState: {
+                user: { _inited: true, authData: { roles: [UserRole.ADMIN] } },
+            },
+        });
+
+        const page = await screen.findByTestId('AdminPanelPage');
+        expect(page).toBeInTheDocument();
+    });
 });

@@ -1,58 +1,43 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import webpack from 'webpack';
-import { buildBabelLoader } from './loaders/buildBabelLoader';
+import { buildCssLoader } from './loaders/buildCssLoader';
 import { BuildOptions } from './types/config';
+import { buildBabelLoader } from './loaders/buildBabelLoader';
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
-  const { isDev } = options;
+    const { isDev } = options;
 
-  const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
-  const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true });
+    const svgLoader = {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+    };
 
-  const fileLoader = {
-    test: /\.(png|jpe?g|gif|woff)$/i, // if we want to add some fonts then it also do it here
-    use: [
-      {
-        loader: 'file-loader',
-      },
-    ],
-  };
+    const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
+    const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true });
 
-  const svgLoader = {
-    test: /\.svg$/,
-    use: ['@svgr/webpack'],
-  };
+    const cssLoader = buildCssLoader(isDev);
 
-  const cssLoader = {
-    test: /\.s[ac]ss$/i,
-    use: [
-      isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-      {
-        loader: 'css-loader',
-        options: {
-          modules: {
-            auto: (resourcePath: string) => resourcePath.endsWith('.module.scss') || resourcePath.endsWith('.module.css'),
-            localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]',
-          },
-        },
-      },
-      'sass-loader',
-    ],
-  };
-  // if we don't use TS than we need to add babel-loaders. ts-loaders include support tsx
-  const typescriptLoader = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: /node_modules/,
-  };
+    // Если не используем тайпскрипт - нужен babel-loader
+    // const typescriptLoader = {
+    //     test: /\.tsx?$/,
+    //     use: 'ts-loader',
+    //     exclude: /node_modules/,
+    // };
 
-  //
-  return [
-    fileLoader,
-    svgLoader,
-    codeBabelLoader,
-    tsxCodeBabelLoader,
-    // typescriptLoader,
-    cssLoader,
-  ];
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    };
+
+    return [
+        fileLoader,
+        svgLoader,
+        codeBabelLoader,
+        tsxCodeBabelLoader,
+        // typescriptLoader,
+        cssLoader,
+    ];
 }

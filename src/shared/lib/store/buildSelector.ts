@@ -1,11 +1,13 @@
 import { useSelector } from 'react-redux';
 import { StateSchema } from '@/app/providers/StoreProvider';
 
-type SelectorType<T> = (state: StateSchema) => T;
-type ResultType<T> = [()=> T, SelectorType<T>]
+type Selector<T> = (state: StateSchema) => T;
+type Result<T> = [() => T, Selector<T>]
 
-export function buildSelector<T>(selector: SelectorType<T>): ResultType<T> {
-  const useSelectorHook = () => useSelector(selector);
+export function buildSelector<T>(selector: Selector<T>): Result<T> {
+    const useSelectorHook = () => {
+        return useSelector(selector);
+    };
 
-  return [useSelectorHook, selector];
+    return [useSelectorHook, selector];
 }
