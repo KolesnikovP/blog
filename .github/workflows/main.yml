@@ -1,9 +1,9 @@
 name: linting, testing, building (updated)
 on:
   push:
-    branches: [ master ]
+    branches: [ master, main ]
   pull_request:
-    branches: [ master ]
+    branches: [ master, main ]
 permissions:
   contents: write
   pages: write
