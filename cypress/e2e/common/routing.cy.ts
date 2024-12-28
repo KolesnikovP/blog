@@ -18,6 +18,18 @@ describe('routing', () => {
     });
 
     describe('User authorized', () => {
+        beforeEach(() => {
+            cy.login('admin', '123');
+        });
 
+        it('should login and get to profile page', () => {
+            cy.visit('/profile/1');
+            cy.get(selectByTestId('ProfilePage')).should('exist');
+        });
+
+        it('should get to articles page', () => {
+            cy.visit('/articles');
+            cy.get(selectByTestId('ArticlesPage')).should('exist');
+        });
     });
 });
