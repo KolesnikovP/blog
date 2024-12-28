@@ -1,5 +1,7 @@
-describe('empty spec', () => {
-    it('passes', () => {
-        cy.visit('https://example.cypress.io');
+describe('routing', () => {
+    it('go to the main page', () => {
+        // we added base url
+        cy.visit('/');
+        cy.get('[data-testid=MainPage]').should('exist');
     });
 });
