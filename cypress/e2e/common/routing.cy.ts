@@ -19,7 +19,7 @@ describe('routing', () => {
 
     describe('User authorized', () => {
         beforeEach(() => {
-            cy.login('admin', '123');
+            cy.login();
         });
 
         it('should login and get to profile page', () => {
