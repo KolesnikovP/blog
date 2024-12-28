@@ -4,7 +4,7 @@
     "lib": ["es5", "dom"],
     "types": ["cypress", "node"],
 		"allowJs": true,
-		"isolatedModules": true
+		"isolatedModules": false
   },
   "include": ["**/*.ts"],
 	// extends the main config of the project to sync settings
