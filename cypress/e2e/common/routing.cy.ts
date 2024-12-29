@@ -22,7 +22,7 @@ describe('routing', () => {
             cy.login();
         });
 
-        it('should login and get to profile page', () => {
+        it('should common and get to profile page', () => {
             cy.visit('/profile/1');
             cy.get(selectByTestId('ProfilePage')).should('exist');
         });
