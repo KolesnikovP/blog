@@ -30,7 +30,6 @@ npm run start:dev или npm run start:dev:vite - запуск сервера + 
 - `npm run generate:slice` - Скрипт для генерации FSD слайсов
 
 ----
-
 ## Архитектура проекта
 
 Проект написан в соответствии с методологией Feature sliced design
