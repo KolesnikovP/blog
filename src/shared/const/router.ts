@@ -12,6 +12,7 @@ export enum AppRoutes {
     NOT_FOUND = 'not_found',
 }
 
+
 export const getRouteMain = () => '/';
 export const getRouteAbout = () => '/about';
 export const getRouteProfile = (id: string) => `/profile/${id}`;
